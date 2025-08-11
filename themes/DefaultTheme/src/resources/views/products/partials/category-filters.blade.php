@@ -3,13 +3,13 @@
         <form id="products-filter-form " class="w-100 d-flex align-items-center justify-content-center flex-column gap-2" action="{{ route('front.products.category-products', ['category' => $category]) }}">
             <div class="col-12 d-flex align-items-start justify-content-center">
                 <div class="section-title text-sm-title title-wide mb-0 no-after-title-wide w-100">
-                    <h2>فیلتر محصولات</h2>
+                    <h2>فیلتر خودروها</h2>
                 </div>
             </div>
             <div class="col-12 mb-3">
                 <div class="widget-search">
                     <input type="text" name="s" value="{{ request('s') }}"
-                        placeholder="نام محصول مورد نظر را بنویسید..." class="w-100">
+                        placeholder="نام خودرو مورد نظر را بنویسید..." class="w-100">
                     <button class="btn-search-widget">
                         <img src="{{ theme_asset('img/theme/search.png') }}" alt="search buttom">
                     </button>

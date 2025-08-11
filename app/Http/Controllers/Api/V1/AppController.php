@@ -99,7 +99,7 @@ class AppController extends Controller
                             "field" => "text",
                             "value" => [
                                 "text" => [
-                                    "fa" => "جدیدترین محصولات"
+                                    "fa" => "جدیدترین خودروها"
                                 ],
                                 "style" => []
                             ],

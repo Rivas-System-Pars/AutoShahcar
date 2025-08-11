@@ -42,6 +42,8 @@ class Product extends Model
     /**
      * @return HasMany
      */
+
+
     public function gifts(): HasMany
     {
         return $this->hasMany(ProductGift::class,'product_id');
@@ -162,14 +164,18 @@ class Product extends Model
     {
         return $this->morphToMany(Label::class, 'labelable')->withTimestamps();
     }
-	
+
 	public function ratings()
     {
         return $this->hasMany(Rating::class);
     }
 
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'user_creator');
+    }
     //------------- end relations
-	
+
 	public function averageRating()
     {
         return $this->ratings()->avg('rating'); // میانگین امتیازها
@@ -252,9 +258,9 @@ class Product extends Model
     public function getLowestPrice($numeric = false)
     {
         $price = $this->isDownload() ? $this->price : $this->lowestPrice;
-		
+
         /*if ($this->isDownload()) {
-            return $numeric ? null : 'محصول دانلودی';
+            return $numeric ? null : 'خودرو دانلودی';
         }*/
 
         if ($price && $price->stock) {

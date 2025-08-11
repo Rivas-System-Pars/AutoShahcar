@@ -32,7 +32,7 @@ document.getElementById('add-gift-per-purchase').onclick = function () {
         '<div class="col-md-6">' +
         '<div class="form-group">' +
         '<div class="controls">' +
-        '<label>محصولات</label>' +
+        '<label>خودروها</label>' +
         '<select class="form-control gift-products"></select>' +
         '</div>' +
         '</div>' +

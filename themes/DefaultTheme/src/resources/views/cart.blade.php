@@ -8,7 +8,7 @@
 
                 @if(!check_cart_quantity())
                     <div class="alert alert-danger" role="alert">
-                        موجودی برخی از محصولات اضافه شده به سبد خرید به اتمام رسیده و یا کمتر از تعداد اضافه شده به سبد خرید است،<br> لطفا سبد خریدتان را ویرایش کنید.
+                        موجودی برخی از خودروها اضافه شده به سبد خرید به اتمام رسیده و یا کمتر از تعداد اضافه شده به سبد خرید است،<br> لطفا سبد خریدتان را ویرایش کنید.
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span class="icon-close" aria-hidden="true"></span>
                         </button>
@@ -125,7 +125,7 @@
                                     <i class="mdi mdi-cart-remove"></i>
                                 </div>
                                 <p class="cart-empty-title">سبد خرید شما خالیست!</p>
-                                <p class="pb-3">می‌توانید برای مشاهده محصولات بیشتر به صفحه اصلی بروید:</p>
+                                <p class="pb-3">می‌توانید برای مشاهده خودروها بیشتر به صفحه اصلی بروید:</p>
 
                                 <a href="/" class="btn-primary-cm">برو  به صفحه اصلی</a>
                             </div>
@@ -147,7 +147,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalCenterTitle">
                         <i class="now-ui-icons location_pin"></i>
-                        حذف محصول
+                        حذف خودرو
                     </h5>
                     <button type="button" class="close" data-dismiss="modal"
                         aria-label="Close">
@@ -155,7 +155,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>آیا تمایل به حذف این محصول از سبدخرید دارید؟</p>
+                    <p>آیا تمایل به حذف این خودرو از سبدخرید دارید؟</p>
 
                     <div class="form-ui dt-sl p-0">
                         <form id="delete-form" class="text-center p-0" action="#" method="POST">

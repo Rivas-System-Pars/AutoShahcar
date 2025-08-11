@@ -47,7 +47,7 @@
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" data-toggle="tab" href="#order-products" role="tab" aria-controls="order-products" aria-selected="false">
-                                      تعداد محصولات سفارشات
+                                      تعداد خودروها سفارشات
                                     </a>
                                 </li>
                             </ul>

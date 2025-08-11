@@ -20,6 +20,8 @@
         <div class="product-title">
             <h1>{{ $product->title }}</h1>
             <h3>{{ $product->title_en }}</h3>
+            <p> نام نمایشگاه دار : {{$product->creator->first_name . " "  . $product->creator->last_name}}</p>
+            <p>  شماره تماس  : {{$product->creator->username}}</p>
             @if (PermissionEdit($product))
                 @can('products.update')
                     <a class="btn btn-warning btn-sm admin-edit-url" target="_blank"
@@ -43,7 +45,7 @@
 
                 @if ($specialSpecifications->count())
                     <div class="product-params dt-sl">
-                        <ul class="mt-0" data-title="ویژگی‌های محصول">
+                        <ul class="mt-0" data-title="ویژگی‌های خودرو">
                             @foreach ($specialSpecifications as $specification)
                                 <li>
                                     <span>{{ $specification->name }}: </span>
@@ -176,7 +178,7 @@
         <div id="rating-container">
             <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 dt-sl">
                 <h2>
-                    امتیاز محصول:
+                    امتیاز خودرو:
                 </h2>
                 @php
                     $averageRating = $product->averageRating();

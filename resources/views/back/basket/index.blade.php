@@ -18,9 +18,9 @@
                                 <ol class="breadcrumb no-border">
                                     <li class="breadcrumb-item">مدیریت
                                     </li>
-                                    <li class="breadcrumb-item">مدیریت محصولات
+                                    <li class="breadcrumb-item">مدیریت خودروها
                                     </li>
-                                    <li class="breadcrumb-item active">لیست محصولات
+                                    <li class="breadcrumb-item active">لیست خودروها
                                     </li>
                                 </ol>
                             </div>
@@ -36,7 +36,7 @@
 
                 <section id="main-card" class="card">
                     <div class="card-header">
-                        <h4 class="card-title">لیست محصولات</h4>
+                        <h4 class="card-title">لیست خودروها</h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
@@ -67,7 +67,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    با حذف محصولات دیگر قادر به بازیابی آنها نخواهید بود
+                    با حذف خودروها دیگر قادر به بازیابی آنها نخواهید بود
                 </div>
                 <div class="modal-footer">
                     <form action="{{ route('admin.baskets.multipleDestroy') }}" id="basket-multiple-delete-form">
@@ -92,7 +92,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    با حذف محصول دیگر قادر به بازیابی آن نخواهید بود
+                    با حذف خودرو دیگر قادر به بازیابی آن نخواهید بود
                 </div>
                 <div class="modal-footer">
                     <form action="#" id="basket-delete-form">

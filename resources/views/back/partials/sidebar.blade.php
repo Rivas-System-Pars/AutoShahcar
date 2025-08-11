@@ -1,5 +1,9 @@
-<div
-    class="main-menu menu-fixed menu-accordion menu-shadow {{ user_option('theme_color') == 'light' ? 'menu-light' : 'menu-dark' }}"
+@php
+    use App\Models\Ticket;
+    $ticketscount = Ticket::where('status', 'خوانده نشده')->count();
+
+@endphp
+<div class="main-menu menu-fixed menu-accordion menu-shadow {{ user_option('theme_color') == 'light' ? 'menu-light' : 'menu-dark' }}"
     data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
@@ -61,8 +65,7 @@
 
                         @can('posts.category')
                             <li class="{{ active_class('admin.posts.categories.index') }}">
-                                <a href="{{ route('admin.posts.categories.index') }}"><i
-                                        class="feather icon-circle"></i><span
+                                <a href="{{ route('admin.posts.categories.index') }}"><i class="feather icon-circle"></i><span
                                         class="menu-item">دسته بندی ها</span></a>
                             </li>
                         @endcan
@@ -72,34 +75,34 @@
             {{-- <li class="nav-item has-sub {{ open_class(['admin.baskets.*']) }}">
                 <a href="#">
                     <i class="feather icon-package"></i>
-                    <span class="menu-title">سبد محصولات</span>
+                    <span class="menu-title">سبد خودروها</span>
                 </a>
                 <ul class="menu-content">
                     <li class="{{ active_class('admin.baskets.index') }}">
                         <a href="{{ route('admin.baskets.index') }}"><i class="feather icon-circle"></i><span
-                                class="menu-item">لیست سبد محصولات</span></a>
+                                class="menu-item">لیست سبد خودروها</span></a>
                     </li>
                     <li class="{{ active_class('admin.baskets.create') }}">
                         <a href="{{ route('admin.baskets.create') }}"><i class="feather icon-circle"></i><span
-                                class="menu-item">ایجاد سبد محصول</span></a>
+                                class="menu-item">ایجاد سبد خودرو</span></a>
                     </li>
                 </ul>
             </li> --}}
             @can('products')
                 <li class="nav-item has-sub {{ open_class(['admin.products.*', 'admin.brands.*']) }}"><a href="#"><i
-                            class="feather icon-shopping-cart"></i><span class="menu-title"> محصولات</span></a>
+                            class="feather icon-shopping-cart"></i><span class="menu-title"> خودروها</span></a>
                     <ul class="menu-content">
                         @can('products.index')
                             <li class="{{ active_class('admin.products.index') }}">
                                 <a href="{{ route('admin.products.index') }}"><i class="feather icon-circle"></i><span
-                                        class="menu-item">لیست محصولات</span></a>
+                                        class="menu-item">لیست خودروها</span></a>
                             </li>
                         @endcan
 
                         @can('products.create')
                             <li class="{{ active_class('admin.products.create') }}">
                                 <a href="{{ route('admin.products.create') }}"><i class="feather icon-circle"></i><span
-                                        class="menu-item">ایجاد محصول</span></a>
+                                        class="menu-item">ایجاد خودرو</span></a>
                             </li>
                         @endcan
 
@@ -117,36 +120,33 @@
                             </li>
                         @endcan
 
-                        @can('products.stock-notify')
+                        {{-- @can('products.stock-notify')
                             <li class="{{ active_class('admin.stock-notifies.index') }}">
                                 <a href="{{ route('admin.stock-notifies.index') }}"><i
                                         class="feather icon-circle"></i><span
                                         class="menu-item">لیست اطلاع از موجودی</span></a>
                             </li>
-                        @endcan
+                        @endcan --}}
 
                         @can('products.prices')
                             <li class="{{ active_class('admin.product.prices.index') }}">
-                                <a href="{{ route('admin.product.prices.index') }}"><i
-                                        class="feather icon-circle"></i><span
+                                <a href="{{ route('admin.product.prices.index') }}"><i class="feather icon-circle"></i><span
                                         class="menu-item">قیمت ها</span></a>
                             </li>
                         @endcan
 
                         @can('products.brands')
                             <li class="{{ open_class(['admin.brands.*']) }}">
-                                <a href="#"><i class="feather icon-circle"></i><span
-                                        class="menu-item"> برندها</span></a>
+                                <a href="#"><i class="feather icon-circle"></i><span class="menu-item"> برندها</span></a>
                                 <ul class="menu-content">
                                     <li class="{{ active_class('admin.brands.index') }}">
                                         <a class="{{ active_class('admin.brands.index') }}"
-                                           href="{{ route('admin.brands.index') }}"><i
-                                                class="feather icon-circle"></i><span
+                                            href="{{ route('admin.brands.index') }}"><i class="feather icon-circle"></i><span
                                                 class="menu-item">لیست برندها</span></a>
                                     </li>
                                     <li class="{{ active_class('admin.brands.create') }}">
                                         <a class="{{ active_class('admin.brands.create') }}"
-                                           href="{{ route('admin.brands.create') }}"><i class="feather icon-circle"></i><span
+                                            href="{{ route('admin.brands.create') }}"><i class="feather icon-circle"></i><span
                                                 class="menu-item">ایجاد برند</span></a>
                                     </li>
                                 </ul>
@@ -161,7 +161,7 @@
                                     @can('attributes.groups.index')
                                         <li class="{{ active_class('admin.attributeGroups.index') }}">
                                             <a class="{{ active_class('admin.attributeGroups.index') }}"
-                                               href="{{ route('admin.attributeGroups.index') }}"><i
+                                                href="{{ route('admin.attributeGroups.index') }}"><i
                                                     class="feather icon-circle"></i><span class="menu-item">لیست گروه ویژگی
                                                     ها</span></a>
                                         </li>
@@ -170,7 +170,7 @@
                                     @can('attributes.groups.create')
                                         <li class="{{ active_class('admin.attributeGroups.create') }}">
                                             <a class="{{ active_class('admin.attributeGroups.create') }}"
-                                               href="{{ route('admin.attributeGroups.create') }}"><i
+                                                href="{{ route('admin.attributeGroups.create') }}"><i
                                                     class="feather icon-circle"></i><span class="menu-item">ایجاد گروه
                                                     ویژگی</span></a>
                                         </li>
@@ -179,9 +179,8 @@
                                     @can('attributes.create')
                                         <li class="{{ active_class('admin.attributes.create') }}">
                                             <a class="{{ active_class('admin.attributes.create') }}"
-                                               href="{{ route('admin.attributes.create') }}"><i
-                                                    class="feather icon-circle"></i><span
-                                                    class="menu-item">ایجاد ویژگی</span></a>
+                                                href="{{ route('admin.attributes.create') }}"><i
+                                                    class="feather icon-circle"></i><span class="menu-item">ایجاد ویژگی</span></a>
                                         </li>
                                     @endcan
                                 </ul>
@@ -196,7 +195,7 @@
                                     @can('filters.index')
                                         <li class="{{ active_class('admin.filters.index') }}">
                                             <a class="{{ active_class('admin.filters.index') }}"
-                                               href="{{ route('admin.filters.index') }}"><i
+                                                href="{{ route('admin.filters.index') }}"><i
                                                     class="feather icon-circle"></i><span class="menu-item">لیست فیلتر
                                                     ها</span></a>
                                         </li>
@@ -205,9 +204,8 @@
                                     @can('filters.create')
                                         <li class="{{ active_class('admin.filters.create') }}">
                                             <a class="{{ active_class('admin.filters.create') }}"
-                                               href="{{ route('admin.filters.create') }}"><i
-                                                    class="feather icon-circle"></i><span
-                                                    class="menu-item">ایجاد فیلتر</span></a>
+                                                href="{{ route('admin.filters.create') }}"><i
+                                                    class="feather icon-circle"></i><span class="menu-item">ایجاد فیلتر</span></a>
                                         </li>
                                     @endcan
                                 </ul>
@@ -224,13 +222,13 @@
                     <ul class="menu-content">
                         <li class="{{ active_class('admin.discounts.index') }}">
                             <a class="{{ active_class('admin.discounts.index') }}"
-                               href="{{ route('admin.discounts.index') }}"><i class="feather icon-circle"></i><span
+                                href="{{ route('admin.discounts.index') }}"><i class="feather icon-circle"></i><span
                                     class="menu-item">لیست تخفیف ها</span></a>
                         </li>
 
                         <li class="{{ active_class('admin.discounts.create') }}">
                             <a class="{{ active_class('admin.discounts.create') }}"
-                               href="{{ route('admin.discounts.create') }}"><i class="feather icon-circle"></i><span
+                                href="{{ route('admin.discounts.create') }}"><i class="feather icon-circle"></i><span
                                     class="menu-item">ایجاد تخفیف</span></a>
                         </li>
                     </ul>
@@ -258,16 +256,14 @@
                         @can('orders.index')
                             <li class="">
                                 <a href="{{ route('admin.orders.index') }}?status=paid"><i
-                                        class="feather icon-circle"></i><span
-                                        class="menu-item">سفارشات پرداخت شده</span></a>
+                                        class="feather icon-circle"></i><span class="menu-item">سفارشات پرداخت شده</span></a>
                             </li>
                         @endcan
 
                         @can('orders.index')
                             <li class="{{ active_class('admin.orders.notCompleted') }}">
-                                <a href="{{ route('admin.orders.notCompleted') }}"><i
-                                        class="feather icon-circle"></i><span
-                                        class="menu-item"> محصولات منتظر ارسال</span></a>
+                                <a href="{{ route('admin.orders.notCompleted') }}"><i class="feather icon-circle"></i><span
+                                        class="menu-item"> خودروها منتظر ارسال</span></a>
                             </li>
                         @endcan
 
@@ -282,14 +278,14 @@
                     <ul class="menu-content">
                         <li class="{{ active_class('admin.carriers.index') }}">
                             <a class="{{ active_class('admin.carriers.index') }}"
-                               href="{{ route('admin.carriers.index') }}"><i class="feather icon-circle"></i><span
+                                href="{{ route('admin.carriers.index') }}"><i class="feather icon-circle"></i><span
                                     class="menu-item">روش های ارسال</span></a>
                         </li>
 
                         @can('carriers.provinces.index')
                             <li class="{{ active_class('admin.provinces.index') }}">
                                 <a class="{{ active_class('admin.provinces.index') }}"
-                                   href="{{ route('admin.provinces.index') }}"><i class="feather icon-circle"></i><span
+                                    href="{{ route('admin.provinces.index') }}"><i class="feather icon-circle"></i><span
                                         class="menu-item">لیست استان ها</span></a>
                             </li>
                         @endcan
@@ -297,7 +293,7 @@
                         @can('carriers.provinces.create')
                             <li class="{{ active_class('admin.provinces.create') }}">
                                 <a class="{{ active_class('admin.provinces.create') }}"
-                                   href="{{ route('admin.provinces.create') }}"><i class="feather icon-circle"></i><span
+                                    href="{{ route('admin.provinces.create') }}"><i class="feather icon-circle"></i><span
                                         class="menu-item">ایجاد استان</span></a>
                             </li>
                         @endcan
@@ -305,7 +301,7 @@
                         @can('carriers.cities.create')
                             <li class="{{ active_class('admin.cities.create') }}">
                                 <a class="{{ active_class('admin.cities.create') }}"
-                                   href="{{ route('admin.cities.create') }}"><i class="feather icon-circle"></i><span
+                                    href="{{ route('admin.cities.create') }}"><i class="feather icon-circle"></i><span
                                         class="menu-item">ایجاد شهر</span></a>
                             </li>
                         @endcan
@@ -376,8 +372,7 @@
 
                         @can('links.groups')
                             <li class="{{ active_class('admin.links.groups.index') }}">
-                                <a href="{{ route('admin.links.groups.index') }}"><i
-                                        class="feather icon-circle"></i><span
+                                <a href="{{ route('admin.links.groups.index') }}"><i class="feather icon-circle"></i><span
                                         class="menu-item">لیست گروه ها </span></a>
                             </li>
                         @endcan
@@ -435,8 +430,7 @@
 
                         @can('statistics.orders')
                             <li class="{{ active_class('admin.statistics.orders') }}">
-                                <a href="{{ route('admin.statistics.orders') }}"><i
-                                        class="feather icon-circle"></i><span
+                                <a href="{{ route('admin.statistics.orders') }}"><i class="feather icon-circle"></i><span
                                         class="menu-item">سفارشات</span></a>
                             </li>
                         @endcan
@@ -457,24 +451,21 @@
 
                         @can('statistics.viewsList')
                             <li class="{{ active_class('admin.statistics.viewsList') }}">
-                                <a href="{{ route('admin.statistics.viewsList') }}"><i
-                                        class="feather icon-circle"></i><span
+                                <a href="{{ route('admin.statistics.viewsList') }}"><i class="feather icon-circle"></i><span
                                         class="menu-item">لیست بازدیدها</span></a>
                             </li>
                         @endcan
 
                         @can('statistics.viewers')
                             <li class="{{ active_class('admin.statistics.viewers') }}">
-                                <a href="{{ route('admin.statistics.viewers') }}"><i
-                                        class="feather icon-circle"></i><span
+                                <a href="{{ route('admin.statistics.viewers') }}"><i class="feather icon-circle"></i><span
                                         class="menu-item"> بازدید کنندگان امروز</span></a>
                             </li>
                         @endcan
 
                         @can('statistics.sms')
                             <li class="{{ active_class('admin.statistics.smsLog') }}">
-                                <a href="{{ route('admin.statistics.smsLog') }}"><i
-                                        class="feather icon-circle"></i><span
+                                <a href="{{ route('admin.statistics.smsLog') }}"><i class="feather icon-circle"></i><span
                                         class="menu-item"> لاگ پیامک های ارسالی</span></a>
                             </li>
                         @endcan
@@ -505,8 +496,7 @@
                         @can('themes.settings')
                             @if (config('front.settings.fields'))
                                 <li class="{{ active_class('admin.themes.settings') }}">
-                                    <a href="{{ route('admin.themes.settings') }}"><i
-                                            class="feather icon-circle"></i><span
+                                    <a href="{{ route('admin.themes.settings') }}"><i class="feather icon-circle"></i><span
                                             class="menu-item">تنظیمات قالب</span></a>
                                 </li>
                             @endcan
@@ -522,244 +512,249 @@
                             @endif
                         @endcan
 
-                    </ul>
-                </li>
-            @endcan
+                </ul>
+            </li>
+        @endcan
 
-            @can('tickets')
-                <li class="nav-item has-sub {{ open_class(['admin.tickets.*']) }}"><a href="#"><i
-                            class="feather icon-inbox"></i><span class="menu-title"> تیکت ها</span></a>
-                    <ul class="menu-content">
-                        @can('tickets.index')
-                            <li class="{{ active_class('admin.tickets.index') }}">
-                                <a href="{{ route('admin.tickets.index') }}"><i class="feather icon-circle"></i><span
-                                        class="menu-item">لیست تیکت ها</span></a>
-                            </li>
-                        @endcan
-
-                        @can('tickets.create')
-                            <li class="{{ active_class('admin.tickets.create') }}">
-                                <a href="{{ route('admin.tickets.create') }}"><i class="feather icon-circle"></i><span
-                                        class="menu-item">ایجاد تیکت</span></a>
-                            </li>
-                        @endcan
-                    </ul>
-                </li>
-            @endcan
-
-            @can(['payments'])
-                <li class="nav-item has-sub {{ open_class(['admin.transactions.*', 'admin.currencies.*','admin.installments.*']) }}"><a
-                        href="#"><i class="feather icon-credit-card"></i><span class="menu-title">
-                        پرداخت</span></a>
-                    <ul class="menu-content">
-                        @can('payments.transactions.index')
-                            <li class="{{ active_class('admin.transactions.index') }} nav-item">
-                                <a href="{{ route('admin.transactions.index') }}">
-                                    <i class="feather feather icon-circle"></i>
-                                    <span class="menu-title"> لیست تراکنش ها</span>
-                                </a>
-                            </li>
-                        @endcan
-
-                        @can('payments.wallet-histories.index')
-                            <li class="{{ active_class('admin.wallet-histories.index') }} nav-item">
-                                <a href="{{ route('admin.wallet-histories.index') }}">
-                                    <i class="feather feather icon-circle"></i>
-                                    <span class="menu-title"> تاریخچه کیف پول</span>
-                                </a>
-                            </li>
-                        @endcan
-
-                        @can('payments.currencies')
-                            <li class="{{ active_class('admin.currencies.index') }} nav-item">
-                                <a href="{{ route('admin.currencies.index') }}">
-                                    <i class="feather feather icon-circle"></i>
-                                    <span class="menu-title"> لیست ارز ها</span>
-                                </a>
-                            </li>
-                        @endcan
-                        <li class="{{ active_class(['admin.installments.*']) }} nav-item">
-                            <a href="{{ route('admin.installments.index') }}">
-                                <i class="feather feather icon-circle"></i>
-                                <span class="menu-title">اقساط</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-            @endcan
+        @can('tickets')
 
 
-
-            @can('settings')
-                <li class="nav-item has-sub">
-                    <a href="#">
-                        <i class="feather icon-settings"></i>
-                        <span class="menu-title">تنظیمات</span>
-                    </a>
-                    <ul class="menu-content">
-                        @can('settings.information')
-                            <li class="{{ active_class('admin.settings.information') }}">
-                                <a href="{{ route('admin.settings.information') }}"><i
-                                        class="feather icon-circle"></i><span
-                                        class="menu-item">اطلاعات کلی</span></a>
-                            </li>
-                        @endcan
-
-                        @can('settings.socials')
-                            @if (config('front.socials'))
-                                <li class="{{ active_class('admin.settings.socials') }}">
-                                    <a href="{{ route('admin.settings.socials') }}"><i
-                                            class="feather icon-circle"></i><span
-                                            class="menu-item">شبکه های اجتماعی</span></a>
-                                </li>
-                            @endif
-                        @endcan
-
-                        @can('settings.gateway')
-                            <li class="{{ active_class('admin.settings.gateways') }}">
-                                <a href="{{ route('admin.settings.gateways') }}"><i
-                                        class="feather icon-circle"></i><span
-                                        class="menu-item">درگاه های پرداخت</span></a>
-                            </li>
-                        @endcan
-
-                        @can('settings.others')
-                            <li class="{{ active_class('admin.settings.others') }}">
-                                <a href="{{ route('admin.settings.others') }}"><i class="feather icon-circle"></i><span
-                                        class="menu-item">تنظیمات دیگر</span></a>
-                            </li>
-                        @endcan
-
-                        @can('settings.sms')
-                            <li class="{{ active_class('admin.settings.sms') }}">
-                                <a href="{{ route('admin.settings.sms') }}"><i class="feather icon-circle"></i><span
-                                        class="menu-item">تنظیمات پیامک</span></a>
-                            </li>
-                        @endcan
-
-                    </ul>
-                </li>
-            @endcan
-
-            <li
-                class="nav-item has-sub {{ open_class(['admin.file-manager', 'admin.backups.*', 'admin.apikeys.*', 'admin.notifications']) }}">
-                <a href="#">
-                    <i class="feather icon-more-horizontal"></i>
-                    <span class="menu-title">دیگر</span>
-                </a>
+            <li class="nav-item has-sub {{ open_class(['admin.tickets.*']) }}"><a href="#"><i
+                        class="feather icon-inbox"></i><span class="menu-title"> تیکت ها</span></a>
                 <ul class="menu-content">
-                    @can('file-manager')
-                        <li class="{{ active_class('admin.file-manager') }} nav-item">
-                            <a href="{{ route('admin.file-manager') }}">
-                                <i class="feather icon-folder"></i>
-                                <span class="menu-title"> فایل ها</span>
+                    @can('tickets.index')
+                        <li class="{{ active_class('admin.tickets.index') }}">
+                            <a href="{{ route('admin.tickets.index') }}"><i class="feather icon-circle"></i><span
+                                    class="menu-item">لیست تیکت ها</span> <span
+                                    class="badge badge-danger badge-pill float-right">{{$ticketscount}}</span></a>
+
+                        </li>
+                    @endcan
+
+                    @can('tickets.create')
+                        <li class="{{ active_class('admin.tickets.create') }}">
+                            <a href="{{ route('admin.tickets.create') }}"><i class="feather icon-circle"></i><span
+                                    class="menu-item">ایجاد تیکت</span></a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
+        @endcan
+
+        @can(['payments'])
+            <li
+                class="nav-item has-sub {{ open_class(['admin.transactions.*', 'admin.currencies.*', 'admin.installments.*']) }}">
+                <a href="#"><i class="feather icon-credit-card"></i><span class="menu-title">
+                        پرداخت</span></a>
+                <ul class="menu-content">
+                    @can('payments.transactions.index')
+                        <li class="{{ active_class('admin.transactions.index') }} nav-item">
+                            <a href="{{ route('admin.transactions.index') }}">
+                                <i class="feather feather icon-circle"></i>
+                                <span class="menu-title"> لیست تراکنش ها</span>
                             </a>
                         </li>
                     @endcan
 
-                    @can('backups.index')
-                        <li class="{{ active_class('admin.backups.index') }} nav-item">
-                            <a href="{{ route('admin.backups.index') }}">
-                                <i class="feather icon-upload-cloud"></i>
-                                <span class="menu-title">لیست بکاپ ها</span>
+                    @can('payments.wallet-histories.index')
+                        <li class="{{ active_class('admin.wallet-histories.index') }} nav-item">
+                            <a href="{{ route('admin.wallet-histories.index') }}">
+                                <i class="feather feather icon-circle"></i>
+                                <span class="menu-title"> تاریخچه کیف پول</span>
                             </a>
                         </li>
                     @endcan
 
-                    @can('apikeys.index')
-                        <li class="{{ active_class('admin.apikeys.index') }} nav-item">
-                            <a href="{{ route('admin.apikeys.index') }}">
-                                <i class="fa fa-key"></i>
-                                <span class="menu-title">کلیدهای وب سرویس</span>
+                    @can('payments.currencies')
+                        <li class="{{ active_class('admin.currencies.index') }} nav-item">
+                            <a href="{{ route('admin.currencies.index') }}">
+                                <i class="feather feather icon-circle"></i>
+                                <span class="menu-title"> لیست ارز ها</span>
                             </a>
                         </li>
                     @endcan
-
-                    <li class="{{ active_class('admin.notifications') }} nav-item">
-                        <a href="{{ route('admin.notifications') }}">
-                            <i class="feather icon-bell"></i>
-                            <div class="d-flex justify-content-between w-100">
-                                <span class="menu-title"> اعلان ها</span>
-                                @if ($notifications->count())
-                                    <span class="badge badge badge-primary badge-pill">
-                                    {{ $notifications->count() }}</span>
-                                @endif
-                            </div>
+                    <li class="{{ active_class(['admin.installments.*']) }} nav-item">
+                        <a href="{{ route('admin.installments.index') }}">
+                            <i class="feather feather icon-circle"></i>
+                            <span class="menu-title">اقساط</span>
                         </a>
                     </li>
 
                 </ul>
             </li>
+        @endcan
 
-            @if (auth()->user()->isCreator())
-                <li class="nav-item has-sub">
-                    <a href="#">
-                        <i class="feather icon-alert-octagon"></i>
-                        <span class="menu-title">توسعه دهنده</span>
-                        <span class="badge badge-danger badge-pill float-right mr-2">creator</span>
-                    </a>
-                    <ul class="menu-content">
-                        <li class="{{ active_class('admin.permissions.index') }}">
-                            <a href="{{ route('admin.permissions.index') }}"><i
-                                    class="feather icon-circle"></i><span class="menu-item">دسترسی ها</span></a>
+
+
+        @can('settings')
+            <li class="nav-item has-sub">
+                <a href="#">
+                    <i class="feather icon-settings"></i>
+                    <span class="menu-title">تنظیمات</span>
+                </a>
+                <ul class="menu-content">
+                    @can('settings.information')
+                        <li class="{{ active_class('admin.settings.information') }}">
+                            <a href="{{ route('admin.settings.information') }}"><i class="feather icon-circle"></i><span
+                                    class="menu-item">اطلاعات کلی</span></a>
+                        </li>
+                    @endcan
+
+                    @can('settings.socials')
+                        @if (config('front.socials'))
+                            <li class="{{ active_class('admin.settings.socials') }}">
+                                <a href="{{ route('admin.settings.socials') }}"><i class="feather icon-circle"></i><span
+                                        class="menu-item">شبکه های اجتماعی</span></a>
+                            </li>
+                        @endif
+                    @endcan
+
+                    @can('settings.gateway')
+                        <li class="{{ active_class('admin.settings.gateways') }}">
+                            <a href="{{ route('admin.settings.gateways') }}"><i class="feather icon-circle"></i><span
+                                    class="menu-item">درگاه های پرداخت</span></a>
+                        </li>
+                    @endcan
+
+                    @can('settings.others')
+                        <li class="{{ active_class('admin.settings.others') }}">
+                            <a href="{{ route('admin.settings.others') }}"><i class="feather icon-circle"></i><span
+                                    class="menu-item">تنظیمات دیگر</span></a>
+                        </li>
+                    @endcan
+
+                    @can('settings.sms')
+                        <li class="{{ active_class('admin.settings.sms') }}">
+                            <a href="{{ route('admin.settings.sms') }}"><i class="feather icon-circle"></i><span
+                                    class="menu-item">تنظیمات پیامک</span></a>
+                        </li>
+                    @endcan
+
+                </ul>
+            </li>
+        @endcan
+
+        <li
+            class="nav-item has-sub {{ open_class(['admin.file-manager', 'admin.backups.*', 'admin.apikeys.*', 'admin.notifications']) }}">
+            <a href="#">
+                <i class="feather icon-more-horizontal"></i>
+                <span class="menu-title">دیگر</span>
+            </a>
+            <ul class="menu-content">
+                @can('file-manager')
+                    <li class="{{ active_class('admin.file-manager') }} nav-item">
+                        <a href="{{ route('admin.file-manager') }}">
+                            <i class="feather icon-folder"></i>
+                            <span class="menu-title"> فایل ها</span>
+                        </a>
+                    </li>
+                @endcan
+
+                @can('backups.index')
+                    <li class="{{ active_class('admin.backups.index') }} nav-item">
+                        <a href="{{ route('admin.backups.index') }}">
+                            <i class="feather icon-upload-cloud"></i>
+                            <span class="menu-title">لیست بکاپ ها</span>
+                        </a>
+                    </li>
+                @endcan
+
+                @can('apikeys.index')
+                    <li class="{{ active_class('admin.apikeys.index') }} nav-item">
+                        <a href="{{ route('admin.apikeys.index') }}">
+                            <i class="fa fa-key"></i>
+                            <span class="menu-title">کلیدهای وب سرویس</span>
+                        </a>
+                    </li>
+                @endcan
+                @auth
+                    @if (auth()->user()->level === 'creator')
+                        <li class="{{ active_class('admin.notifications') }} nav-item">
+                            <a href="{{ route('admin.notifications') }}">
+                                <i class="feather icon-bell"></i>
+                                <div class="d-flex justify-content-between w-100">
+                                    <span class="menu-title"> اعلان ها</span>
+                                    @if ($notifications->count())
+                                        <span class="badge badge badge-primary badge-pill">
+                                            {{ $notifications->count() }}</span>
+                                    @endif
+                                </div>
+                            </a>
                         </li>
 
-                        <li class="{{ active_class('admin.developer.settings') }}">
-                            <a href="{{ route('admin.developer.settings') }}"><i
-                                    class="feather icon-circle"></i><span class="menu-item">تنظیمات توسعه
+                </ul>
+            </li>
+            @endif
+        @endauth
+
+        @if (auth()->user()->isCreator())
+            <li class="nav-item has-sub">
+                <a href="#">
+                    <i class="feather icon-alert-octagon"></i>
+                    <span class="menu-title">توسعه دهنده</span>
+                    <span class="badge badge-danger badge-pill float-right mr-2">creator</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="{{ active_class('admin.permissions.index') }}">
+                        <a href="{{ route('admin.permissions.index') }}"><i
+                                class="feather icon-circle"></i><span class="menu-item">دسترسی ها</span></a>
+                    </li>
+
+                    <li class="{{ active_class('admin.developer.settings') }}">
+                        <a href="{{ route('admin.developer.settings') }}"><i
+                                class="feather icon-circle"></i><span class="menu-item">تنظیمات توسعه
                                 دهنده</span></a>
-                        </li>
+                    </li>
 
-                        <li class="{{ active_class('admin.logs.index') }}">
-                            <a target="_blank" href="{{ route('admin.logs.index') }}"><i
-                                    class="feather icon-circle"></i><span class="menu-item">لاگ ها</span></a>
-                        </li>
+                    <li class="{{ active_class('admin.logs.index') }}">
+                        <a target="_blank" href="{{ route('admin.logs.index') }}"><i
+                                class="feather icon-circle"></i><span class="menu-item">لاگ ها</span></a>
+                    </li>
 
-                        {{-- <li class="{{ active_class('admin.developer.showUpdater') }}">
+                    {{-- <li class="{{ active_class('admin.developer.showUpdater') }}">
                                 <a href="{{ route('admin.developer.showUpdater') }}"><i class="feather icon-circle"></i><span class="menu-item">بروزرسانی</span></a>
                             </li> --}}
 
-                    </ul>
-                </li>
-            @endif
-			@can('menus')
-                <li class="{{ active_class('admin.menus.index') }} nav-item">
-                    <a href="{{ route('admin.menus.index') }}">
-                        <i class="feather icon-menu"></i>
-                        <span class="menu-title"> منوها</span>
-                    </a>
-                </li>
-            @endcan
+                </ul>
+            </li>
+        @endif
+        @can('menus')
+            <li class="{{ active_class('admin.menus.index') }} nav-item">
+                <a href="{{ route('admin.menus.index') }}">
+                    <i class="feather icon-menu"></i>
+                    <span class="menu-title"> منوها</span>
+                </a>
+            </li>
+        @endcan
 
-            @can('contacts')
-                <li class="{{ active_class('admin.contacts.index') }} nav-item">
-                    <a href="{{ route('admin.contacts.index') }}">
-                        <i class="feather icon-message-square"></i>
-                        <span class="menu-title">لیست تماس با ما</span>
-                    </a>
-                </li>
-            @endcan
+        @can('contacts')
+            <li class="{{ active_class('admin.contacts.index') }} nav-item">
+                <a href="{{ route('admin.contacts.index') }}">
+                    <i class="feather icon-message-square"></i>
+                    <span class="menu-title">لیست تماس با ما</span>
+                </a>
+            </li>
+        @endcan
 
-            @can('comments')
-                <li class="{{ active_class('admin.comments.index') }} nav-item"><a
-                        href="{{ route('admin.comments.index') }}">
-                        <i class="feather icon-message-circle"></i>
-                        <span class="menu-title"> نظرات</span>
-                    </a>
-                </li>
-            @endcan
+        @can('comments')
+            <li class="{{ active_class('admin.comments.index') }} nav-item"><a
+                    href="{{ route('admin.comments.index') }}">
+                    <i class="feather icon-message-circle"></i>
+                    <span class="menu-title"> نظرات</span>
+                </a>
+            </li>
+        @endcan
 
-            @can('settlements')
+        @can('settlements')
             <li class="{{ active_class('admin.settlements.index') }} nav-item"><a
                     href="{{ route('admin.settlements.index') }}">
                     <i class="feather icon-credit-card"></i>
                     <span class="menu-title"> تسویه حساب ها</span>
                 </a>
             </li>
-            @endcan
+        @endcan
 
-			{{-- @can('careeropportunities')
+        {{-- @can('careeropportunities')
 			<li class="{{ active_class('admin.careeropportunities.*') }} nav-item"><a href="{{ route('admin.careeropportunities.index') }}">
                     <i class="feather icon-briefcase"></i>
                     <span class="menu-title">فرصت‌های شغلی</span>
@@ -788,6 +783,6 @@
             </li>
 			@endcan --}}
 
-        </ul>
-    </div>
+    </ul>
+</div>
 </div>

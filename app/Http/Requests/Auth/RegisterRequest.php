@@ -26,10 +26,11 @@ class RegisterRequest extends FormRequest
     {
         return [
             'first_name' => ['required', 'string', 'max:255', new NotSpecialChar()],
-            'last_name'  => ['required', 'string', 'max:255', new NotSpecialChar()],
-            'username'   => ['required', 'string', 'regex:/(09)[0-9]{9}/', 'digits:11', 'unique:users'],
-            'password'   => ['required', 'string', 'min:8', 'confirmed:confirmed'],
-            'captcha'    => ['required', 'captcha'],
+            'last_name' => ['required', 'string', 'max:255', new NotSpecialChar()],
+            'username' => ['required', 'string', 'regex:/(09)[0-9]{9}/', 'digits:11', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed:confirmed'],
+            'level' => ['required'],
+            'captcha' => ['required', 'captcha'],
         ];
     }
 
@@ -37,17 +38,18 @@ class RegisterRequest extends FormRequest
     {
         return [
             'username.required' => 'لطفا یک شماره موبایل معتبر وارد کنید',
-            'username.string'   => 'لطفا یک شماره موبایل معتبر وارد کنید',
-            'username.regex'    => 'لطفا یک شماره موبایل معتبر وارد کنید',
-            'username.digits'   => 'لطفا یک شماره موبایل معتبر وارد کنید',
-            'username.unique'   => 'شماره موبایل وارد شده تکراری است',
+            'username.string' => 'لطفا یک شماره موبایل معتبر وارد کنید',
+            'username.regex' => 'لطفا یک شماره موبایل معتبر وارد کنید',
+            'username.digits' => 'لطفا یک شماره موبایل معتبر وارد کنید',
+            'username.unique' => 'شماره موبایل وارد شده تکراری است',
+            'level.required' => 'لطفاً یکی از گزینه‌های "نمایشگاه‌دار" یا "کاربر عادی" را انتخاب کنید.',
         ];
     }
 
     protected function prepareForValidation()
     {
         $this->merge([
-            'username'   => convertPersianToEnglish($this->input('username'))
+            'username' => convertPersianToEnglish($this->input('username'))
         ]);
     }
 }

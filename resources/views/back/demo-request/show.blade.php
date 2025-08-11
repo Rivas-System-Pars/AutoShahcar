@@ -44,7 +44,7 @@
 									<div class="mt-1">{{ $demoRequestItem->email }}</div>
 								</div>
 								<div class="col-12 col-md-6 mb-2">
-									<div>محصول</div>
+									<div>خودرو</div>
 									<div class="mt-1">
 										<a href="{{ route('front.products.show',$demoRequestItem->product->slug) }}">{{ $demoRequestItem->product->title }}</a>
 									</div>

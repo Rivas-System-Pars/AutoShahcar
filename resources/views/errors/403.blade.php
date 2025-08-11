@@ -16,17 +16,18 @@
                                 <div class="card-body text-center">
                                     <img src="{{ asset('back/app-assets/images/pages/not-authorized.png') }}" class="img-fluid align-self-center"
                                         alt="branding logo">
-                                    <h1 class="font-large-2 my-1">لطفا جهت اضافه کردن محصول پلن خود را تمدید یا خریداری نمایید ! </h1>
+                                    <h1 class="font-large-2 my-1">لطفا جهت اضافه کردن خودرو پلن خود را تمدید یا خریداری نمایید ! </h1>
                                     <p class="p-2">
                                         شما اجازه ی دسترسی به این صفحه را ندارید.
                                     </p>
                                     <a class="btn btn-primary btn-lg mt-2" href="{{ url('/') }}">بازگشت به صفحه اصلی</a>
+                                    <a class="btn btn-primary btn-lg mt-2" href="{{url('/products/category-products/تعرفه-های-پرداختی')}}">خرید یا تمدید پلن</a>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- error 404 end -->
             </div>
         </div>
     </div>

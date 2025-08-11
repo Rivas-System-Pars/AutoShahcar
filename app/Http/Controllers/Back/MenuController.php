@@ -30,6 +30,7 @@ class MenuController extends Controller
 
     public function show(Menu $menu)
     {
+
         return response()->json(['menu' => $menu, 'title' => $menu->full_title]);
     }
 

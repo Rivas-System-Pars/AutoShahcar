@@ -14,9 +14,9 @@
                                 <ol class="breadcrumb no-border">
                                     <li class="breadcrumb-item">مدیریت
                                     </li>
-                                    <li class="breadcrumb-item">مدیریت محصولات
+                                    <li class="breadcrumb-item">مدیریت خودروها
                                     </li>
-                                    <li class="breadcrumb-item active">ویرایش محصول
+                                    <li class="breadcrumb-item active">ویرایش خودرو
                                     </li>
                                 </ol>
                             </div>
@@ -37,7 +37,7 @@
                         <div class="col-md-12">
                             <div class="card overflow-hidden">
                                 <div class="card-header">
-                                    <h4 class="card-title">اطلاعات محصول "{{ $product->title }}"</h4>
+                                    <h4 class="card-title">اطلاعات خودرو "{{ $product->title }}"</h4>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
@@ -50,11 +50,11 @@
                                                         role="tab" aria-selected="true">اطلاعات
                                                         کلی</a>
                                                 </li>
-                                                <li class="nav-item">
+                                                {{-- <li class="nav-item">
                                                     <a class="nav-link" id="productMetaTab" data-toggle="tab"
                                                         aria-controls="tabProductMeta" href="#tabProductMeta" role="tab"
                                                         aria-selected="false">سئو</a>
-                                                </li>
+                                                </li> --}}
                                                 <li class="nav-item physical-item">
                                                     <a class="nav-link" id="product-prices-tab-nav" data-toggle="tab"
                                                         aria-controls="product-prices-tab" href="#product-prices-tab"
@@ -120,16 +120,16 @@
 
                                                                 <div class="col-md-6 col-12">
                                                                     <div class="form-group">
-                                                                        <label>نوع محصول</label>
+                                                                        <label>نوع خودرو</label>
                                                                         <select name="type" id="product-type"
                                                                             class="form-control">
                                                                             <option value="physical"
                                                                                 {{ $product->isPhysical() ? 'selected' : '' }}>
-                                                                                محصول فیزیکی
+                                                                                خودرو فیزیکی
                                                                             </option>
                                                                             <option value="download"
                                                                                 {{ $product->isDownload() ? 'selected' : '' }}>
-                                                                                محصول پرداختی
+                                                                                خودرو پرداختی
                                                                             </option>
                                                                         </select>
                                                                     </div>
@@ -364,7 +364,7 @@
                                                     <div id="specifications-card" class="card">
                                                         <div
                                                             class="card-header d-flex justify-content-between align-items-end">
-                                                            <h4 class="card-title">مشخصات محصول</h4>
+                                                            <h4 class="card-title">مشخصات خودرو</h4>
                                                             <p class="font-medium-5 mb-0"><i
                                                                     class="feather icon-help-circle text-muted cursor-pointer"></i>
                                                             </p>
@@ -373,11 +373,11 @@
                                                             <div class="card-body ">
                                                                 <div class="row">
                                                                     <div class="col-md-7 text-justify">
-                                                                        <p>در این بخش میتوانید مشخصات محصول را وارد
-                                                                            کنید. دقت کنید که محصولات بر اساس نوع مشخصات
+                                                                        <p>در این بخش میتوانید مشخصات خودرو را وارد
+                                                                            کنید. دقت کنید که خودروها بر اساس نوع مشخصات
                                                                             با یکدیگر مقایسه میشوند. به عنوان مثال یک
-                                                                            محصول با نوع مشخصات "گوشی موبایل" فقط با
-                                                                            محصولات این نوع مقایسه میشود</p>
+                                                                            خودرو با نوع مشخصات "گوشی موبایل" فقط با
+                                                                            خودروها این نوع مقایسه میشود</p>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
@@ -553,7 +553,7 @@
 
                                                             <div class="row">
                                                                 <div class="col-md-12">
-                                                                    <label>تصاویر محصول ( <small>بهترین اندازه <span
+                                                                    <label>تصاویر خودرو ( <small>بهترین اندازه <span
                                                                                 class="text-danger">{{ config('front.imageSizes.productGalleryImage') }}</span>
                                                                             پیکسل میباشد.</small> )</label>
 
@@ -651,7 +651,7 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <div class="controls">
-                                                                            <label>محصولات</label>
+                                                                            <label>خودروها</label>
                                                                             <select
                                                                                 class="form-control gift-products"></select>
                                                                         </div>
@@ -814,7 +814,7 @@
                                                             <i class="vs-icon feather icon-check"></i>
                                                         </span>
                                                     </span>
-                                                    <span>محصول ویژه؟</span>
+                                                    <span>خودرو ویژه؟</span>
                                                 </div>
                                             </fieldset>
                                         </div>
@@ -852,7 +852,7 @@
                                             <button type="submit"
                                                 class="btn btn-primary mr-1 mb-1 waves-effect waves-light">
                                                 ویرایش
-                                                محصول
+                                                خودرو
                                             </button>
                                         </div>
                                     </div>

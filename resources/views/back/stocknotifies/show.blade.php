@@ -3,7 +3,7 @@
         <tbody>
 
             <tr>
-                <th scope="row" style="min-width: 150px;">محصول</th>
+                <th scope="row" style="min-width: 150px;">خودرو</th>
                 <td>{{ $stock_notify->product->title }} <a href="{{ Route::has('front.products.show') ? route('front.products.show', ['product' => $stock_notify->product]) : '' }}" target="_blank"><i class="feather icon-external-link"></i></a></td>
 
             </tr>

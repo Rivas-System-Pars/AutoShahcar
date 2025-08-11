@@ -16,6 +16,9 @@
             <a class="dropdown-item" href="{{ route('front.user.profile') }}">
                 <i class="mdi mdi-account-card-details-outline"></i>پروفایل
             </a>
+            <a class="dropdown-item" href="{{url('/products/category-products/تعرفه-های-پرداختی')}}">
+                <i class="mdi mdi-basket-fill"></i> خرید پلن
+            </a>
             <a class="dropdown-item" href="{{ route('front.orders.index') }}">
                 <i class="mdi mdi-account-edit-outline"></i>سفارشات من
             </a>

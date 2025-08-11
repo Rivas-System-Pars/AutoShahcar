@@ -10,7 +10,7 @@
         <div class="categories_container_inner">
 
             <div class="categories_container_inner_topbar">
-                <h3 class="categories_container_inner_topbar-text">دسته بندی محصولات</h3>
+                <h3 class="categories_container_inner_topbar-text">دسته بندی خودروها</h3>
             </div>
 
             <div class="categories_container_inner_main">
@@ -22,7 +22,7 @@
 
                         <div class="swiper-wrapper">
                             @foreach ($categories as $category)
-                            
+
                             <div class="swiper-slide">
 
                                 <div class="category_item_box">
@@ -115,7 +115,7 @@
 
                             </div> --}}
 
-                            
+
 
                         </div>
                         <div class="categories_container_inner_main-swiper-next">

@@ -195,7 +195,7 @@ return [
                 'attributes' => 'required'
             ],
             [
-                'title'      => 'نمایش نمودار قیمت در صفحه محصول',
+                'title'      => 'نمایش نمودار قیمت در صفحه خودرو',
                 'key'        => 'dt_show_price_change_chart',
                 'input-type' => 'select',
                 'class'      => 'col-md-4 col-6',

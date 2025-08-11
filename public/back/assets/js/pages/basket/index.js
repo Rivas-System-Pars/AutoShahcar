@@ -68,7 +68,7 @@ var basket_datatable = (function () {
             },
             {
                 field: 'title',
-                title: 'عنوان سبد محصول',
+                title: 'عنوان سبد خودرو',
                 width: 200,
                 template: function (row) {
                     return row.title;
@@ -158,7 +158,7 @@ $('#basket-delete-form').on('submit', function (e) {
         url: window.location.href+'/'+$(this).attr('action'),
         type: 'DELETE',
         success: function (data) {
-            toastr.success('محصول با موفقیت حذف شد.');
+            toastr.success('خودرو با موفقیت حذف شد.');
             datatable.reload();
         },
         beforeSend: function (xhr) {
@@ -194,7 +194,7 @@ $('#basket-multiple-delete-form').on('submit', function (e) {
         type: 'POST',
         data: formData,
         success: function (data) {
-            toastr.success('محصولات انتخاب شده با موفقیت حذف شدند.');
+            toastr.success('خودروها انتخاب شده با موفقیت حذف شدند.');
             datatable.reload();
         },
         beforeSend: function (xhr) {

@@ -4,7 +4,7 @@ $(document).ready(function () {
         width: '100%',
         placeholder: {
             id: null, // the value of the option
-            text: 'محصولات را انتخاب کنید'
+            text: 'خودروها را انتخاب کنید'
         },
     });
     $(document).on('click','.remove-gift-products-item',function (e) {
@@ -21,7 +21,7 @@ $(document).ready(function () {
         const giftProductsList = $('.gift-products-list');
         const id = e.params.args.data.id;
         if (giftProductsList.find('> div[data-product="' + id + '"]').length) {
-            alert("محصول در لیست هدایا وجود دارد")
+            alert("خودرو در لیست هدایا وجود دارد")
         } else {
             const i = giftProductsList.find('> div').length + 1;
             const html = '<div class="col-12 d-flex align-items-center" data-product="' + id + '">' +

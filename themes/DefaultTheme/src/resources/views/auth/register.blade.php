@@ -1,7 +1,6 @@
 @extends('front::auth.layouts.master', ['title' => 'ثبت نام در سایت'])
 
 @section('content')
-
     <!-- Start main-content -->
     <main class="main-content dt-sl mt-4 mb-3">
         <div class="container main-container">
@@ -19,19 +18,22 @@
                                 <h3>نام</h3>
                             </div>
                             <div class="form-row form-group">
-                                <input type="text" name="first_name" class="input-ui pr-2" placeholder="  نام خود را وارد نمایید">
+                                <input type="text" name="first_name" class="input-ui pr-2"
+                                    placeholder="  نام خود را وارد نمایید">
                             </div>
                             <div class="form-row-title">
                                 <h3>نام خانوادگی</h3>
                             </div>
                             <div class="form-row form-group">
-                                <input type="text" name="last_name" class="input-ui pr-2" placeholder="  نام خانوادگی خود را وارد نمایید">
+                                <input type="text" name="last_name" class="input-ui pr-2"
+                                    placeholder="  نام خانوادگی خود را وارد نمایید">
                             </div>
                             <div class="form-row-title">
                                 <h3>شماره موبایل</h3>
                             </div>
                             <div class="form-row with-icon form-group">
-                                <input type="text" name="username" class="input-ui pr-2" placeholder="  شماره موبایل خود را وارد نمایید">
+                                <input type="text" name="username" class="input-ui pr-2"
+                                    placeholder="  شماره موبایل خود را وارد نمایید">
                                 <i class="mdi mdi-account-circle-outline"></i>
                             </div>
 
@@ -39,7 +41,8 @@
                                 <h3>رمز عبور</h3>
                             </div>
                             <div class="form-row with-icon form-group">
-                                <input id="password" type="password" name="password" class="input-ui pr-2" placeholder="رمز عبور خود را وارد نمایید">
+                                <input id="password" type="password" name="password" class="input-ui pr-2"
+                                    placeholder="رمز عبور خود را وارد نمایید">
                                 <i class="mdi mdi-lock-open-variant-outline"></i>
                             </div>
 
@@ -47,27 +50,38 @@
                                 <h3>تکرار رمز عبور</h3>
                             </div>
                             <div class="form-row form-group">
-                                <input type="password" name="password_confirmation" class="input-ui pr-2" placeholder="تکرار رمز عبور خود را وارد نمایید">
+                                <input type="password" name="password_confirmation" class="input-ui pr-2"
+                                    placeholder="تکرار رمز عبور خود را وارد نمایید">
                             </div>
 
                             <div class="form-row mt-4">
                                 <div class="col-md-8 col-6">
                                     <div class="form-group">
-                                        <input type="text" class="input-ui pl-2 captcha" autocomplete="off" name="captcha" placeholder="کد امنیتی" required>
+                                        <input type="text" class="input-ui pl-2 captcha" autocomplete="off"
+                                            name="captcha" placeholder="کد امنیتی" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-6">
                                     <img class="captcha w-100" src="{{ captcha_src('flat') }}" alt="captcha">
                                 </div>
                             </div>
+                            <div class="form-row-title mt-3">
+                            </div>
+                            <div class="form-row form-group">
+                                <label class="ui-checkbox" for="level_admin">
+                                    <input type="radio" name="level" id="level" value="admin">
+                                    <span class="ui-checkbox-check"></span>
+                                    نمایشگاه دار
+                                </label>
+                            </div>
 
-
-                            {{-- <input type="checkbox" name="level" class="custom-control-input" id="level">
-                            <label class="custom-control-label" for="level">
-                                نمایشگاه دار
-                            </label> --}}
-                            <input type="checkbox" name="level" class="custom-control-input" id="level" value="admin">
-                            <label class="custom-control-label" for="level">نمایشگاه دار</label>
+                            <div class="form-row form-group">
+                                <label class="ui-checkbox" for="level_user">
+                                    <input type="radio" name="level" id="level" value="user">
+                                    <span class="ui-checkbox-check"></span>
+                                    کاربر
+                                </label>
+                            </div>
 
                             <div class="form-row mt-3">
                                 <button class="btn-primary-cm btn-with-icon mx-auto w-100">
@@ -87,13 +101,24 @@
         </div>
     </main>
     <!-- End main-content -->
-
 @endsection
 
 @push('scripts')
     <script>
-        var redirect_url = '{{ request("redirect") ?: Redirect::intended()->getTargetUrl() }}';
+        var redirect_url = '{{ request('redirect') ?: Redirect::intended()->getTargetUrl() }}';
     </script>
 
     <script src="{{ theme_asset('js/pages/register.js') }}?v=2"></script>
+
+<script>
+    document.querySelectorAll('input[name="level"]').forEach(el => {
+        el.addEventListener('change', function() {
+            if (this.checked) {
+                document.querySelectorAll('input[name="level"]').forEach(cb => {
+                    if (cb !== this) cb.checked = false;
+                });
+            }
+        });
+    });
+    </script>
 @endpush

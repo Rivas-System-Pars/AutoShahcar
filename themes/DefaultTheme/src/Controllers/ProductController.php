@@ -23,7 +23,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        
+
         $categories = Category::published()
             ->whereNull('Category_id')
             ->where('type', 'productcat')
@@ -74,7 +74,7 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        
+
 $products = Category::query()
     ->when($request->category_id, function ($query) use ($request) {
         $query->where('id', $request->category_id);
@@ -115,7 +115,7 @@ return view('front::products.search', compact('products'));
 
     public function ajax_search(Request $request)
     {
-		
+
 		$products = Category::query()
     ->when($request->category_id, function ($query) use ($request) {
         $query->where('id', $request->category_id);
@@ -143,6 +143,8 @@ return view('front::products.search', compact('products'));
 
     public function show(Product $product)
     {
+
+
         if (!$product->isShowable()) {
             abort(404);
         }
@@ -163,7 +165,7 @@ return view('front::products.search', compact('products'));
                 ->get();
         }
 
-        $product->load(['comments' => function ($query) {
+        $product->load(['creator','comments' => function ($query) {
             $query->whereNull('comment_id')->where('status', 'accepted')->latest();
         }]);
 

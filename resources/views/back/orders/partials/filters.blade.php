@@ -58,13 +58,13 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label>نام محصول</label>
+                            <label>نام خودرو</label>
                             <fieldset class="form-group">
                                 <input class="form-control datatable-filter" name="product_name" value="{{ request('product_name') }}">
                             </fieldset>
                         </div>
                         <div class="col-md-3">
-                            <label>آیدی محصول</label>
+                            <label>آیدی خودرو</label>
                             <fieldset class="form-group">
                                 <input class="form-control datatable-filter" name="product_id" value="{{ request('product_id') }}">
                             </fieldset>

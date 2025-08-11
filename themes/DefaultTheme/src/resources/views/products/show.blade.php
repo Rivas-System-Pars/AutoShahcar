@@ -23,7 +23,7 @@
                 <div class="breadcrumb dt-sl">
                     <nav>
                         <a href="{{ route('front.index') }}">خانه</a>
-                        <a href="{{ route('front.products.index') }}">محصولات</a>
+                        <a href="{{ route('front.products.index') }}">خودروها</a>
                         @if ($product->category)
 
                             @foreach ($product->category->parents() as $parent)
@@ -126,7 +126,7 @@
                     <div class="ah-tab-wrapper dt-sl">
                         <div class="ah-tab dt-sl">
                             @if ($product->isDownload())
-                                <a class="ah-tab-item" href="javascript:void(0)"><i class="mdi mdi-download"></i>فایل های محصول</a>
+                                <a class="ah-tab-item" href="javascript:void(0)"><i class="mdi mdi-download"></i>فایل های خودرو</a>
                             @endif
 
                             @if ($product->description)
@@ -188,7 +188,7 @@
                         @endif
 
                         <div class="ah-tab-content dt-sl">
-                            @include('front::components.comments', ['model' => $product, 'route_link' => route('front.product.comments', ['product' => $product]), 'message' => 'هیچ دیدگاهی برای این محصول ثبت نشده است.' ])
+                            @include('front::components.comments', ['model' => $product, 'route_link' => route('front.product.comments', ['product' => $product]), 'message' => 'هیچ دیدگاهی برای این خودرو ثبت نشده است.' ])
 
                         </div>
                     </div>
@@ -203,7 +203,7 @@
                     <div class="row mb-3">
                         <div class="col-12">
                             <div class="section-title text-sm-title title-wide no-after-title-wide">
-                                <h2>محصولات مرتبط</h2>
+                                <h2>خودروها مرتبط</h2>
                             </div>
                         </div>
 

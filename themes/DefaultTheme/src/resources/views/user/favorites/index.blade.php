@@ -35,7 +35,7 @@
                                             </div>
 
                                             <div class="card-horizontal-product-buttons">
-                                                <a href="{{ route('front.products.show', ['product' => $favorite->product]) }}" class="btn">مشاهده محصول</a>
+                                                <a href="{{ route('front.products.show', ['product' => $favorite->product]) }}" class="btn">مشاهده خودرو</a>
                                                 <button data-action="{{ route('front.favorites.destroy', ['favorite' => $favorite]) }}" data-toggle="modal" data-target="#favorite-delete-modal" class="remove-btn favorite-remove-btn">
                                                     <i class="mdi mdi-trash-can-outline"></i>
                                                 </button>
@@ -88,7 +88,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-12">
-                            <p>آیا تمایل به حذف این محصول از لیست علاقمندی ها دارید؟</p>
+                            <p>آیا تمایل به حذف این خودرو از لیست علاقمندی ها دارید؟</p>
 
                             <div class="form-ui dt-sl">
                                 <form id="favorite-remove-form" action="#" method="POST">

@@ -26,7 +26,7 @@
                     <div class="breadcrumb dt-sl">
                         <nav>
                             <a href="/">خانه</a>
-                            <a href="{{ route('front.products.index') }}">محصولات</a>
+                            <a href="{{ route('front.products.index') }}">خودروها</a>
 
                             @foreach ($category->parents() as $parent)
                                 <a href="{{ route('front.products.category', ['category' => $parent]) }}">{{ $parent->title }}</a>

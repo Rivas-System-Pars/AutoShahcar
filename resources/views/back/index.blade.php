@@ -62,7 +62,7 @@
 
                     </div>
 
-                   
+
 
 
 
@@ -92,7 +92,7 @@
                                             </div>
                                         </div>
                                         <h2 class="text-bold-700">{{ $products_count }}</h2>
-                                        <p class="mb-0 line-ellipsis">تعداد محصولات</p>
+                                        <p class="mb-0 line-ellipsis">تعداد خودروها</p>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@
                                                 <i class="feather icon-users text-info font-medium-5"></i>
                                             </div>
                                         </div> --}}
-                                        
+
                                         <h2 class="text-bold-700">{{ $remainingDays }}</h2>
                                         <p class="mb-0 line-ellipsis">تعداد روز باقیمانده از پلن خریداری شده</p>
                                     </div>

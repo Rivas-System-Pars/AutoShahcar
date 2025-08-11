@@ -22,7 +22,7 @@
                         <div class="breadcrumb dt-sl">
                             <nav>
                                 <a href="/">خانه</a>
-                                <a href="{{ route('front.products.index') }}">محصولات</a>
+                                <a href="{{ route('front.products.index') }}">خودروها</a>
 
                                 @foreach ($category->parents() as $parent)
                                     <a href="{{ route('front.products.category', ['category' => $parent]) }}">{{ $parent->title }}</a>
@@ -55,14 +55,14 @@
                                     <div class="product-card mb-2 mx-res-0 category-index">
                                         <div class="product-card-body">
                                             <h5 class="product-title">
-                                                <a href="{{ route('front.products.category-products', ['category' => $category]) }}">همه محصولات </a>
+                                                <a href="{{ route('front.products.category-products', ['category' => $category]) }}">همه خودروها </a>
                                             </h5>
                                         </div>
                                         <a class="product-thumb" href="{{ route('front.products.category-products', ['category' => $category]) }}">
                                             <img data-src="{{ $category->image ?: asset('/no-image-product.png') }}" alt="{{ $category->title }}">
                                         </a>
 
-                                        <a href="{{ route('front.products.category-products', ['category' => $category]) }}" class="more-cat">مشاهده  همه محصولات</a>
+                                        <a href="{{ route('front.products.category-products', ['category' => $category]) }}" class="more-cat">مشاهده  همه خودروها</a>
                                     </div>
                                 </div>
 
@@ -78,7 +78,7 @@
                                                 <img data-src="{{ $cat->image ?: asset('/no-image-product.png') }}" alt="{{ $cat->title }}">
                                             </a>
 
-                                            <a href="{{ route('front.products.category', ['category' => $cat]) }}" class="more-cat">مشاهده محصولات</a>
+                                            <a href="{{ route('front.products.category', ['category' => $cat]) }}" class="more-cat">مشاهده خودروها</a>
                                         </div>
                                     </div>
                                 @endforeach

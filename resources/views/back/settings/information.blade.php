@@ -467,7 +467,7 @@
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <label class="d-block w-100 mb-2">
-                                                        <span class="d-block w-100 mb-1">تخفیف محصولات</span>
+                                                        <span class="d-block w-100 mb-1">تخفیف خودروها</span>
                                                         <input type="text" name="discount_priority[discount_products]" placeholder="اولویت" class="form-control valid" value="{{ array_key_exists('discount_products',$discount_priority) ? $discount_priority['discount_products'] : null }}">
                                                     </label>
                                                 </div>

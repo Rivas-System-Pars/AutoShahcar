@@ -122,7 +122,7 @@ class Order extends Model
             return $text;
         }
 
-        return 'سفارش شما شامل محصول فیزیکی نمی باشد';
+        return 'سفارش شما شامل خودرو فیزیکی نمی باشد';
     }
 
     public function statusText()

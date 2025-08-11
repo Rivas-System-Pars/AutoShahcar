@@ -21,7 +21,7 @@
                                 <ol class="breadcrumb no-border">
                                     <li class="breadcrumb-item">مدیریت
                                     </li>
-                                    <li class="breadcrumb-item">مدیریت محصولات
+                                    <li class="breadcrumb-item">مدیریت خودروها
                                     </li>
                                     <li class="breadcrumb-item active">دسته بندی ها
                                     </li>

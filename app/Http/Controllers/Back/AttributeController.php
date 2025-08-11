@@ -23,6 +23,7 @@ class AttributeController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
         $this->validate($request, [
             'name'               => 'required',
             'attribute_group_id' => 'required|exists:attribute_groups,id'
@@ -31,6 +32,7 @@ class AttributeController extends Controller
         Attribute::create([
             'name'                => $request->name,
             'value'               => $request->value,
+            'month'              =>$request->month,
             'attribute_group_id'  => $request->attribute_group_id,
         ]);
 
@@ -56,6 +58,8 @@ class AttributeController extends Controller
         $attribute->update([
             'name'                => $request->name,
             'value'               => $request->value,
+            'month'              =>$request->month,
+
             'attribute_group_id'  => $request->attribute_group_id,
         ]);
 

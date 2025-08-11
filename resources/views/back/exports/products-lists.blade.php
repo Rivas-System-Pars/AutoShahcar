@@ -26,7 +26,7 @@
             @endisset
 
             @isset($filters['type'])
-                <th>نوع محصول</th>
+                <th>نوع خودرو</th>
             @endisset
 
             @isset($filters['brand'])
@@ -58,7 +58,7 @@
             @endisset
 
             @isset($filters['special'])
-                <th>محصول ویژه</th>
+                <th>خودرو ویژه</th>
             @endisset
 
             @isset($filters['published'])

@@ -16,7 +16,7 @@
                                     </li>
                                     <li class="breadcrumb-item">مدیریت سفارشات
                                     </li>
-                                    <li class="breadcrumb-item active">محصولات منتظر ارسال
+                                    <li class="breadcrumb-item active">خودروها منتظر ارسال
                                     </li>
                                 </ol>
                             </div>
@@ -29,7 +29,7 @@
                 @if($prices->count())
                     <section class="card">
                         <div class="card-header">
-                            <h4 class="card-title">لیست محصولات </h4>
+                            <h4 class="card-title">لیست خودروها </h4>
                         </div>
                         <div class="card-content" id="main-card">
                             <div class="card-body">
@@ -75,7 +75,7 @@
                 @else
                     <section class="card">
                         <div class="card-header">
-                            <h4 class="card-title">لیست محصولات منتظر ارسال</h4>
+                            <h4 class="card-title">لیست خودروها منتظر ارسال</h4>
                         </div>
                         <div class="card-content">
                             <div class="card-body">

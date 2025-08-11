@@ -36,7 +36,7 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center">#</th>
-                                                <th>محصول</th>
+                                                <th>خودرو</th>
                                                 <th>نام</th>
                                                 <th>شماره موبایل</th>
                                                 <th>ایمیل</th>

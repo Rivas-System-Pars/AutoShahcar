@@ -28,6 +28,6 @@ class ProductsListsSheet implements FromView, WithTitle
      */
     public function title(): string
     {
-        return 'لیست محصولات';
+        return 'لیست خودروها';
     }
 }

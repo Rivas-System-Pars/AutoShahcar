@@ -628,8 +628,8 @@ class ComposerStaticInit5a96c52f48a712c73e9551826b13e4c7
         ),
         'Intervention\\Image\\' => 
         array (
-            0 => __DIR__ . '/..' . '/intervention/imagecache/src/Intervention/Image',
-            1 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
+            0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
+            1 => __DIR__ . '/..' . '/intervention/imagecache/src/Intervention/Image',
         ),
         'Illuminate\\Support\\' => 
         array (

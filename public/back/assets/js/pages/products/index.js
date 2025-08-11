@@ -83,7 +83,7 @@ var product_datatable = (function () {
             },
             {
                 field: 'title',
-                title: 'عنوان محصول',
+                title: 'عنوان خودرو',
                 width: 200,
                 template: function (row) {
                     return row.title;
@@ -158,20 +158,25 @@ var product_datatable = (function () {
             },
             {
                 field: 'quickActions',
-                title: '',
-                textAlign: 'center',
+                title: 'عملیات',
                 sortable: false,
-                width: 50,
+                textAlign: 'center',
+                width: 180,
                 template: function (row) {
-                    return (
-                        '<a title="کپی کردن" href="' +
-                        row.links.copy +
-                        '" target="_blank"><i class="feather icon-copy"></i></a>\
-                    <a title="مشاهده" href="' +
-                        row.links.front +
-                        '" target="_blank"><i class="feather icon-external-link"></i></a>'
-                    );
+                  return `
+                    <a title="کپی کردن" href="${row.links.copy}" target="_blank" rel="noopener"
+                       style="display:inline-flex;align-items:center;justify-content:center;padding:4px 8px;border:1px solid #e5e5e5;border-radius:8px;margin:0 4px;text-decoration:none;">
+                      <i class="feather icon-copy" style="margin-left:6px;font-size:14px;"></i>
+                      <span>کپی کردن</span>
+                    </a>
+                    <a title="مشاهده خودرو" href="${row.links.front}" target="_blank" rel="noopener"
+                       style="display:inline-flex;align-items:center;justify-content:center;padding:4px 8px;border:1px solid #e5e5e5;border-radius:8px;margin:0 4px;text-decoration:none;">
+                      <i class="feather icon-external-link" style="margin-left:6px;font-size:14px;"></i>
+                      <span>مشاهده خودرو</span>
+                    </a>
+                  `;
                 }
+
             }
         ]
     };
@@ -239,7 +244,7 @@ $('#product-delete-form').on('submit', function (e) {
         type: 'POST',
         data: formData,
         success: function (data) {
-            toastr.success('محصول با موفقیت حذف شد.');
+            toastr.success('خودرو با موفقیت حذف شد.');
             datatable.reload();
         },
         beforeSend: function (xhr) {
@@ -275,7 +280,7 @@ $('#product-multiple-delete-form').on('submit', function (e) {
         type: 'POST',
         data: formData,
         success: function (data) {
-            toastr.success('محصولات انتخاب شده با موفقیت حذف شدند.');
+            toastr.success('خودروها انتخاب شده با موفقیت حذف شدند.');
             datatable.reload();
         },
         beforeSend: function (xhr) {

@@ -18,7 +18,7 @@ $(document).on('click', '.add-to-cart', function () {
                 Swal.fire({
                     type: 'success',
                     title: 'با موفقیت اضافه شد',
-                    text: 'محصول مورد نظر با موفقیت به سبد خرید شما اضافه شد برای رزرو محصول سفارش خود را نهایی کنید.',
+                    text: 'خودرو مورد نظر با موفقیت به سبد خرید شما اضافه شد برای رزرو خودرو سفارش خود را نهایی کنید.',
                     confirmButtonText: 'باشه',
                     footer: '<h5><a href="/cart">مشاهده سبد خرید</a></h5>'
                 });
@@ -78,7 +78,7 @@ function sendStockNotify() {
         data: data,
         success: function (data) {
             toastr.success(
-                'نام شما در لیست اطلاع از موجودی این محصول قرار گرفت.',
+                'نام شما در لیست اطلاع از موجودی این خودرو قرار گرفت.',
                 '',
                 {
                     positionClass: 'toast-bottom-left',

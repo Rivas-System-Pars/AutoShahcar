@@ -1,4 +1,4 @@
-@extends('front::layouts.master', ['title' => 'محصولات ویژه'])
+@extends('front::layouts.master', ['title' => 'خودروها ویژه'])
 
 @section('content')
 
@@ -17,8 +17,8 @@
                         <div class="breadcrumb dt-sl">
                             <nav>
                                 <a href="/">خانه</a>
-                                <a href="{{ route('front.products.index') }}">محصولات</a>
-                                <span>محصولات ویژه</span>
+                                <a href="{{ route('front.products.index') }}">خودروها</a>
+                                <span>خودروها ویژه</span>
                             </nav>
                         </div>
                     </div>

@@ -54,7 +54,7 @@
                             </fieldset>
                         </div>
                         <div class="col-md-3">
-                            <label>محصول ویژه</label>
+                            <label>خودرو ویژه</label>
                             <fieldset class="form-group">
                                 <select class="form-control datatable-filter" name="special">
                                     <option value="all" {{ request('special') == 'all' ? 'selected' : '' }}>

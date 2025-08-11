@@ -1,8 +1,8 @@
-@extends('front::layouts.master', ['title' => 'محصولات'])
+@extends('front::layouts.master', ['title' => 'خودروها'])
 
 @push('meta')
     <meta name="description" content="{{ option('info_short_description') }}">
-    <meta name="keywords" content="{{ option('info_tags') }}">    
+    <meta name="keywords" content="{{ option('info_tags') }}">
     <link rel="canonical" href="{{ route('front.products.index') }}" />
 @endpush
 
@@ -21,7 +21,7 @@
                         <div class="breadcrumb dt-sl">
                             <nav>
                                 <a href="/">خانه</a>
-                                <span>محصولات</span>
+                                <span>خودروها</span>
                             </nav>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                                                 <img data-src="{{ $category->image }}" alt="{{ $category->title }}">
                                             </a>
 
-                                            <a href="{{ route('front.products.category', ['category' => $category]) }}" class="more-cat">مشاهده محصولات</a>
+                                            <a href="{{ route('front.products.category', ['category' => $category]) }}" class="more-cat">مشاهده خودروها</a>
                                         </div>
                                     </div>
                                 @endforeach

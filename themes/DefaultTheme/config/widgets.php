@@ -2,7 +2,7 @@
 
 return [
 	'products-column' => [
-        'title' => 'لیست محصولات ستونی',
+        'title' => 'لیست خودروها ستونی',
         'image' => 'widgets/products-default.jpg',
         'options' => [
             [
@@ -13,7 +13,7 @@ return [
                 'class'      => 'col-md-4 col-6',
             ],
             [
-                'title'      => 'نوع محصولات',
+                'title'      => 'نوع خودروها',
                 'key'        => 'products_type',
                 'input-type' => 'select',
                 'class'      => 'col-md-4 col-6',
@@ -98,7 +98,7 @@ return [
                 'class'      => 'col-md-4 col-6',
             ],
             [
-                'title'      => 'نمایش محصولات موجود در اول',
+                'title'      => 'نمایش خودروها موجود در اول',
                 'key'        => 'order_by_stock',
                 'input-type' => 'select',
                 'class'      => 'col-md-4 col-6',
@@ -130,7 +130,7 @@ return [
                 'class'      => 'col-md-9',
             ],
             [
-                'title'      => 'شامل محصولات زیر دسته ها',
+                'title'      => 'شامل خودروها زیر دسته ها',
                 'key'        => 'sub_category_products',
                 'input-type' => 'select',
                 'class'      => 'col-md-3',
@@ -169,7 +169,7 @@ return [
                 'type'       => 'text',
                 'class'      => 'col-md-4 col-6',
             ],
-            
+
             [
                 'title'      => 'تصویر اول',
                 'key'        => 'image1',
@@ -245,7 +245,7 @@ return [
             'image3' =>  'required',
 			'link4' =>  'required|string',
             'image4' =>  'required',
-			
+
         ]
 
     ],
@@ -260,7 +260,7 @@ return [
                 'type'       => 'text',
                 'class'      => 'col-md-4 col-6',
             ],
-            
+
             [
                 'title'      => 'تصویر اول',
                 'key'        => 'image1',
@@ -318,12 +318,12 @@ return [
             'image2' =>  'required',
 			'link3' =>  'required|string',
             'image3' =>  'required',
-			
+
         ]
 
     ],
 	'category-squared' => [
-        'title' => 'دسته بندی محصولات مربعی',
+        'title' => 'دسته بندی خودروها مربعی',
         'image' => 'widgets/categories.png',
         'options' => [
             [
@@ -341,7 +341,7 @@ return [
         ]
     ],
 	'product-list-show' => [
-        'title' => 'لیست محصولات',
+        'title' => 'لیست خودروها',
         'image' => 'widgets/products-default.jpg',
         'options' => [
             [
@@ -352,7 +352,7 @@ return [
                 'class'      => 'col-md-4 col-6',
             ],
             [
-                'title'      => 'نوع محصولات',
+                'title'      => 'نوع خودروها',
                 'key'        => 'products_type',
                 'input-type' => 'select',
                 'class'      => 'col-md-4 col-6',
@@ -437,7 +437,7 @@ return [
                 'class'      => 'col-md-4 col-6',
             ],
             [
-                'title'      => 'نمایش محصولات موجود در اول',
+                'title'      => 'نمایش خودروها موجود در اول',
                 'key'        => 'order_by_stock',
                 'input-type' => 'select',
                 'class'      => 'col-md-4 col-6',
@@ -469,7 +469,7 @@ return [
                 'class'      => 'col-md-9',
             ],
             [
-                'title'      => 'شامل محصولات زیر دسته ها',
+                'title'      => 'شامل خودروها زیر دسته ها',
                 'key'        => 'sub_category_products',
                 'input-type' => 'select',
                 'class'      => 'col-md-3',
@@ -524,11 +524,11 @@ return [
         ]
     ],
 	'products-timer-card' => [
-        'title' => 'محصولات با تخفیفات زمان دار',
+        'title' => 'خودروها با تخفیفات زمان دار',
         'image' => 'widgets/special.jpg',
         'options' => [
             [
-                'title'      => 'نوع محصولات',
+                'title'      => 'نوع خودروها',
                 'key'        => 'products_type',
                 'input-type' => 'select',
                 'class'      => 'col-md-4 col-6',
@@ -599,7 +599,7 @@ return [
                 'attributes' => 'required'
             ],
             [
-                'title'      => 'نمایش محصولات موجود در اول',
+                'title'      => 'نمایش خودروها موجود در اول',
                 'key'        => 'order_by_stock',
                 'input-type' => 'select',
                 'class'      => 'col-md-4 col-6',
@@ -662,7 +662,7 @@ return [
                 'class'      => 'col-md-9',
             ],
             [
-                'title'      => 'شامل محصولات زیر دسته ها',
+                'title'      => 'شامل خودروها زیر دسته ها',
                 'key'        => 'sub_category_products',
                 'input-type' => 'select',
                 'class'      => 'col-md-3',
@@ -742,7 +742,7 @@ return [
 
     ],
     'product-info'  =>  [
-        'title' =>  'معرفی محصولات',
+        'title' =>  'معرفی خودروها',
         'image' => 'widgets/product_info.png',
         'options'   =>  [
             [
@@ -824,7 +824,7 @@ return [
     ],
 
     'services-slider'   =>  [
-        'title' =>  'اسلایدر مشخصات محصولات',
+        'title' =>  'اسلایدر مشخصات خودروها',
         'image' =>  'widgets/services-slider.png',
         'options'   =>  [
             [
@@ -1281,7 +1281,7 @@ return [
     ],
 
     'products-default-block' => [
-        'title' => 'کادر محصولات ساده',
+        'title' => 'کادر خودروها ساده',
         'image' => 'widgets/products-default.jpg',
         'options' => [
             [
@@ -1292,7 +1292,7 @@ return [
                 'class'      => 'col-md-4 col-6',
             ],
             [
-                'title'      => 'نوع محصولات',
+                'title'      => 'نوع خودروها',
                 'key'        => 'products_type',
                 'input-type' => 'select',
                 'class'      => 'col-md-4 col-6',
@@ -1377,7 +1377,7 @@ return [
                 'class'      => 'col-md-4 col-6',
             ],
             [
-                'title'      => 'نمایش محصولات موجود در اول',
+                'title'      => 'نمایش خودروها موجود در اول',
                 'key'        => 'order_by_stock',
                 'input-type' => 'select',
                 'class'      => 'col-md-4 col-6',
@@ -1409,7 +1409,7 @@ return [
                 'class'      => 'col-md-9',
             ],
             [
-                'title'      => 'شامل محصولات زیر دسته ها',
+                'title'      => 'شامل خودروها زیر دسته ها',
                 'key'        => 'sub_category_products',
                 'input-type' => 'select',
                 'class'      => 'col-md-3',
@@ -1439,11 +1439,11 @@ return [
     ],
 
     'products-colorful-block' => [
-        'title' => 'کادر محصولات با پس زمینه',
+        'title' => 'کادر خودروها با پس زمینه',
         'image' => 'widgets/special.jpg',
         'options' => [
             [
-                'title'      => 'نوع محصولات',
+                'title'      => 'نوع خودروها',
                 'key'        => 'products_type',
                 'input-type' => 'select',
                 'class'      => 'col-md-4 col-6',
@@ -1514,7 +1514,7 @@ return [
                 'attributes' => 'required'
             ],
             [
-                'title'      => 'نمایش محصولات موجود در اول',
+                'title'      => 'نمایش خودروها موجود در اول',
                 'key'        => 'order_by_stock',
                 'input-type' => 'select',
                 'class'      => 'col-md-4 col-6',
@@ -1577,7 +1577,7 @@ return [
                 'class'      => 'col-md-9',
             ],
             [
-                'title'      => 'شامل محصولات زیر دسته ها',
+                'title'      => 'شامل خودروها زیر دسته ها',
                 'key'        => 'sub_category_products',
                 'input-type' => 'select',
                 'class'      => 'col-md-3',
@@ -1679,7 +1679,7 @@ return [
     ],
 
     'categories' => [
-        'title' => 'دسته بندی محصولات',
+        'title' => 'دسته بندی خودروها',
         'image' => 'widgets/categories.png',
         'options' => [
             [
@@ -1765,7 +1765,7 @@ return [
         ]
     ],
 	'products-slider-block' => [
-        'title' => 'اسلایدر جدید محصولات',
+        'title' => 'اسلایدر جدید خودروها',
         'image' => 'widgets/products-default.jpg',
         'options' => [
             [
@@ -1776,7 +1776,7 @@ return [
                 'class'      => 'col-md-4 col-6',
             ],
             [
-                'title'      => 'نوع محصولات',
+                'title'      => 'نوع خودروها',
                 'key'        => 'products_type',
                 'input-type' => 'select',
                 'class'      => 'col-md-4 col-6',
@@ -1846,9 +1846,9 @@ return [
                 ],
                 'attributes' => 'required'
             ],
-            
+
             [
-                'title'      => 'نمایش محصولات موجود در اول',
+                'title'      => 'نمایش خودروها موجود در اول',
                 'key'        => 'order_by_stock',
                 'input-type' => 'select',
                 'class'      => 'col-md-4 col-6',
@@ -1880,7 +1880,7 @@ return [
                 'class'      => 'col-md-9',
             ],
             [
-                'title'      => 'شامل محصولات زیر دسته ها',
+                'title'      => 'شامل خودروها زیر دسته ها',
                 'key'        => 'sub_category_products',
                 'input-type' => 'select',
                 'class'      => 'col-md-3',
@@ -1908,7 +1908,7 @@ return [
     ],
 
     'categories-column' => [
-        'title' => 'دسته بندی محصولات ستونی',
+        'title' => 'دسته بندی خودروها ستونی',
         'image' => 'widgets/categories.png',
         'options' => [
             [

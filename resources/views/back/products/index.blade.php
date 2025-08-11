@@ -2,6 +2,7 @@
 
 @push('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/plugins/datatable/datatable.css') }}">
+
 @endpush
 
 @section('content')
@@ -18,9 +19,9 @@
                                 <ol class="breadcrumb no-border">
                                     <li class="breadcrumb-item">مدیریت
                                     </li>
-                                    <li class="breadcrumb-item">مدیریت محصولات
+                                    <li class="breadcrumb-item">مدیریت خودروها
                                     </li>
-                                    <li class="breadcrumb-item active">لیست محصولات
+                                    <li class="breadcrumb-item active">لیست خودروها
                                     </li>
                                 </ol>
                             </div>
@@ -36,7 +37,7 @@
 
                 <section id="main-card" class="card">
                     <div class="card-header">
-                        <h4 class="card-title">لیست محصولات</h4>
+                        <h4 class="card-title">لیست خودروها</h4>
                         @can('products.export')
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
@@ -74,7 +75,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    با حذف محصولات دیگر قادر به بازیابی آنها نخواهید بود
+                    با حذف خودروها دیگر قادر به بازیابی آنها نخواهید بود
                 </div>
                 <div class="modal-footer">
                     <form action="{{ route('admin.products.multipleDestroy') }}" id="product-multiple-delete-form">
@@ -99,7 +100,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    با حذف محصول دیگر قادر به بازیابی آن نخواهید بود
+                    با حذف خودرو دیگر قادر به بازیابی آن نخواهید بود
                 </div>
                 <div class="modal-footer">
                     <form action="#" id="product-delete-form">
@@ -161,7 +162,7 @@
                             <div class="col-md-6">
                                 <div class="custom-control custom-checkbox custom-checkbox-success">
                                     <input id="export-checkbox-type" type="checkbox" class="custom-control-input" name="filters[type]" value="1" checked>
-                                    <label class="custom-control-label" for="export-checkbox-type">نوع محصول</label>
+                                    <label class="custom-control-label" for="export-checkbox-type">نوع خودرو</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -209,7 +210,7 @@
                             <div class="col-md-6">
                                 <div class="custom-control custom-checkbox custom-checkbox-success">
                                     <input id="export-checkbox-special" type="checkbox" class="custom-control-input" name="filters[special]" value="1" checked>
-                                    <label class="custom-control-label" for="export-checkbox-special">محصول ویژه</label>
+                                    <label class="custom-control-label" for="export-checkbox-special">خودرو ویژه</label>
                                 </div>
                             </div>
                             <div class="col-md-6">

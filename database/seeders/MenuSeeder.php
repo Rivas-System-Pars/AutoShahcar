@@ -24,7 +24,7 @@ class MenuSeeder extends Seeder
         ]);
 
         Menu::create([
-            'title'       => 'محصولات',
+            'title'       => 'خودروها',
             'type'        => 'static',
             'static_type' => 'products',
             'ordering'    => $ordering++,

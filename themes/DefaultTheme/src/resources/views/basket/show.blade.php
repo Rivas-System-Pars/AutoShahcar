@@ -17,8 +17,8 @@
                     @include('front::basket.partials.basket-info')
                 </div>
             </div>
-            @include('front::partials.products',['products'=>$basket->products,'title'=>"محصولات موجود در سبد"])
-            @include('front::partials.products',['products'=>$basket->gifts,'title'=>"محصولات هدیه سبد"])
+            @include('front::partials.products',['products'=>$basket->products,'title'=>"خودروها موجود در سبد"])
+            @include('front::partials.products',['products'=>$basket->gifts,'title'=>"خودروها هدیه سبد"])
             <!-- End Product -->
         </div>
     </main>

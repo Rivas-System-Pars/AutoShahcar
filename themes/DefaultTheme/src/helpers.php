@@ -284,7 +284,7 @@ function get_widget($widget)
 
                 break;
             }
-			
+
 			 case 'category-squared': {
 
                 $ids             = [];
@@ -584,7 +584,7 @@ function get_widget($widget)
 
                     foreach ($ids as $id) {
                         $category = Category::find($id);
-						
+
 
                         if ($category && $widget->option('sub_category_products', 'yes') == 'yes') {
                             $categories = array_merge($categories, $category->allChildCategories());
@@ -595,10 +595,10 @@ function get_widget($widget)
 
 
                     $products->whereIn('category_id', $categories);
-					
+
                 }
-				
-				
+
+
 
 
                 switch ($widget->option('order_by_stock', 'yes')) {
@@ -692,7 +692,7 @@ function widget_seeder()
             ],
             [
                 'widget' => [
-                    'title'     => 'محصولات تخفیف دار',
+                    'title'     => 'خودروها تخفیف دار',
                     'key'       => 'products-default-block',
                     'theme'     => $theme,
                     'ordering'  => 2
@@ -700,7 +700,7 @@ function widget_seeder()
                 'options' => [
                     [
                         'key'     => 'title',
-                        'value'   => 'محصولات تخفیف دار',
+                        'value'   => 'خودروها تخفیف دار',
                     ],
                     [
                         'key'     => 'products_type',
@@ -734,7 +734,7 @@ function widget_seeder()
             ],
             [
                 'widget' => [
-                    'title'     => 'محصولات ویژه',
+                    'title'     => 'خودروها ویژه',
                     'key'       => 'products-colorful-block',
                     'theme'     => $theme,
                     'ordering'  => 3
@@ -826,7 +826,7 @@ function widget_seeder()
             ],
             [
                 'widget' => [
-                    'title'     => 'جدید ترین محصولات',
+                    'title'     => 'جدید ترین خودروها',
                     'key'       => 'products-default-block',
                     'theme'     => $theme,
                     'ordering'  => 6
@@ -834,7 +834,7 @@ function widget_seeder()
                 'options' => [
                     [
                         'key'     => 'title',
-                        'value'   => 'جدید ترین محصولات',
+                        'value'   => 'جدید ترین خودروها',
                     ],
                     [
                         'key'     => 'products_type',
@@ -860,7 +860,7 @@ function widget_seeder()
             ],
             [
                 'widget' => [
-                    'title'     => 'پرفروش ترین محصولات',
+                    'title'     => 'پرفروش ترین خودروها',
                     'key'       => 'products-colorful-block',
                     'theme'     => $theme,
                     'ordering'  => 7

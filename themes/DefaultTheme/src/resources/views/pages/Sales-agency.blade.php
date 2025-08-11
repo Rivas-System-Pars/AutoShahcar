@@ -32,7 +32,7 @@
 							</div>
 							@endif
 							<div class="col-12 mb-4">
-	<p>ما در شرکت ریواس سیستم، به دنبال شرکای تجاری متعهد و پویا هستیم تا شبکه فروش محصولاتمان را گسترش دهیم.این فرصت استثنایی برای کسانی ایجاد شده است که می‌خواهند در صنعت فروش نرم افزار، ردپایی ماندگار بر جای گذارند و از مزایای همکاری با یک برند پیشرو بهره‌مند شوند.
+	<p>ما در شرکت ریواس سیستم، به دنبال شرکای تجاری متعهد و پویا هستیم تا شبکه فروش خودروهامان را گسترش دهیم.این فرصت استثنایی برای کسانی ایجاد شده است که می‌خواهند در صنعت فروش نرم افزار، ردپایی ماندگار بر جای گذارند و از مزایای همکاری با یک برند پیشرو بهره‌مند شوند.
 اگر مایل به همکاری به عنوان نماینده فروش هستید، فرم درخواست نمایندگی را تکمیل نمایید پس از بررسی اطلاعات شما، همکاران ما جهت ادامه روند و ارائه اطلاعات بیشتر با شما تماس خواهند گرفت.
 بی‌صبرانه منتظر پیوستن شما به خانواده‌ی بزرگ ریواس سیستم هستیم و امیدواریم که با همکاری مشترک، به موفقیت‌های بزرگ‌تری دست یابیم.
 
@@ -40,9 +40,9 @@
                                             </div>
                             <div class="col-lg-6">
                                 <div class="form-ui additional-info dt-sl">
-                                    
+
                                         <div class="row">
-											
+
 											<div class="col-lg-12">
                                                 <div class="form-row-title">
                                                     <h3>متقضی اخذ نمایندگی در کدام شهر یا استان هستید؟</h3>
@@ -174,8 +174,8 @@
 												<span class="text-sm text-danger">{{ $message }}</span>
 												@enderror
                                             </div>
-											
-											
+
+
 <div class="col-lg-12 mt-4">
                                                 <div class="form-row-title">
                                                     <h3>آدرس</h3>
@@ -189,13 +189,13 @@
                                             </div>
                                         </div>
 
-                                        
-                                    
+
+
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-ui additional-info dt-sl">
-                                   
+
                                         <div class="row">
 											<div class="col-lg-12 mt-3">
                                                 <div class="form-row-title">
@@ -244,7 +244,7 @@
 												<span class="text-sm text-danger">{{ $message }}</span>
 												@enderror
                                             </div>
-											
+
                                             <div class="col-lg-12 mt-4">
                                                 <div class="form-row-title">
                                                     <h3>نحوه آشنایی با شرکت ریواس سیستم </h3>
@@ -264,7 +264,7 @@
                                             </div>
 											<div class="col-lg-12 mt-4">
                                                 <div class="form-row-title">
-                                                    <h3>ایا تاکنون در حوزه فروش محصولات نرم افزاری فعالیتی داشته اید؟ </h3>
+                                                    <h3>ایا تاکنون در حوزه فروش خودروها نرم افزاری فعالیتی داشته اید؟ </h3>
                                                 </div>
                                                 <div class="form-row form-group">
                                                     <select class="input-ui pl-2" name="has_elling_software_products">
@@ -301,7 +301,7 @@
 												<span class="text-sm text-danger">{{ $message }}</span>
 												@enderror
                                             </div>
-                                            
+
 <div class="col-lg-12 mt-4 ">
                                                 <div class="form-row-title">
                                                     <h3>اپلود رزومه</h3>

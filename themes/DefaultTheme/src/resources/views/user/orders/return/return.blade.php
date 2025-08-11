@@ -8,7 +8,7 @@
     <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12">
         <div class="px-3 px-res-0">
             <div class="section-title text-sm-title title-wide mb-1 no-after-title-wide dt-sl mb-2 px-res-1">
-                <h2>مرجوع محصول "{{ $order->title }}"</h2>
+                <h2>مرجوع خودرو "{{ $order->title }}"</h2>
             </div>
             <div class="form-ui additional-info dt-sl dt-sn pt-4">
                 <form @unless($order->returned) id="profile-form" action="{{ route('front.orders.return-products.store',[$order->order_id,$order->product_id]) }}" method="POST" @endunless class="setting_form">

@@ -350,7 +350,7 @@ function category_group($key)
                 return 'دسته بندی وبلاگ';
             }
         case 'productcat': {
-                return 'دسته بندی محصول';
+                return 'دسته بندی خودرو';
             }
     }
 }

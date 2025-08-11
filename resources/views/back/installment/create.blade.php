@@ -88,7 +88,7 @@
                                             </div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<label>محصولات</label>
+													<label>خودروها</label>
 													<select class="form-control product-categories"
 															name="products[]" multiple>
 														@foreach ($products as $product_id=>$product)

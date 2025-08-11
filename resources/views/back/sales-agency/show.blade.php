@@ -96,7 +96,7 @@
 									<div class="mt-1">{{ $salesAgencyItem->method_of_introduction ? $salesAgencyItem->method_of_introduction : "-" }}</div>
 								</div>
 								<div class="col-12 col-md-6 mb-2">
-									<div>ایا تاکنون در حوزه فروش محصولات نرم افزاری فعالیتی داشته اید؟</div>
+									<div>ایا تاکنون در حوزه فروش خودروها نرم افزاری فعالیتی داشته اید؟</div>
 									<div class="mt-1">{{ $salesAgencyItem->has_elling_software_products && $salesAgencyItem->has_elling_software_products == 2 ? "بله" : "خیر" }}</div>
 								</div>
 								<div class="col-12 col-md-6 mb-2">
@@ -116,16 +116,16 @@
 								</div>
 								@endif
 								<div class="col-12 mb-2">
-									<div>تمایل به فروش کدام یک از محصولات و نرم افزارها را دارید؟</div>
+									<div>تمایل به فروش کدام یک از خودروها و نرم افزارها را دارید؟</div>
 									<div class="mt-1">
 										@if($salesAgencyItem->products->count())
 											@foreach($salesAgencyItem->products as $product)
 												<a href="{{ route('front.products.show',$product->slug) }}">{{ $product->title }}</a>
 											@endforeach
 										@else
-										<span>محصولی انتخاب نشده است</span>
+										<span>خودروی انتخاب نشده است</span>
 										@endif
-										
+
 									</div>
 								</div>
 							</div>

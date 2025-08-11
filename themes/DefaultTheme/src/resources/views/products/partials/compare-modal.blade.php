@@ -4,7 +4,7 @@
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="compareModalLabel">افزودن محصول برای مقایسه</h5>
+                <h5 class="modal-title" id="compareModalLabel">افزودن خودرو برای مقایسه</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -13,7 +13,7 @@
                 <form id="compare-products-form" action="{{ route('front.products.similar-compare') }}">
                     @csrf
                     @foreach ($products as $product)
-                        <input type="hidden" name="products[]" value="{{ $product->id }}">    
+                        <input type="hidden" name="products[]" value="{{ $product->id }}">
                     @endforeach
                     <input type="hidden" name="current_url" value="{{ $current_url }}">
 
@@ -44,7 +44,7 @@
                             <p>چیزی برای مقایسه یافت نشد!</p>
                         </div>
                     @endif
-                    
+
                 </div>
             </div>
 

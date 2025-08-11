@@ -139,7 +139,7 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request)
     {
-        
+
         try{
 			return DB::transaction(function()use ($request){
 				$data=[
@@ -194,7 +194,7 @@ class ProductController extends Controller
 				// update product labels
 				$this->updateProductLabels($product, $request);
 
-				toastr()->success('محصول با موفقیت ایجاد شد.');
+				toastr()->success('خودرو با موفقیت ایجاد شد.');
 
 				return response("success");
 			});
@@ -290,7 +290,7 @@ class ProductController extends Controller
                 // update product labels
                 $this->updateProductLabels($product, $request);
 
-                toastr()->success('محصول با موفقیت ویرایش شد.');
+                toastr()->success('خودرو با موفقیت ویرایش شد.');
 
                 return response("success");
             });

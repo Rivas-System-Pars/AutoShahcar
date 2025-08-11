@@ -117,7 +117,7 @@
                     <div class="row mb-3">
                         <div class="col-12">
                             <div class="section-title text-sm-title title-wide no-after-title-wide">
-                                <h2>محصولات پیشنهادی برای شما</h2>
+                                <h2>خودروها پیشنهادی برای شما</h2>
                             </div>
                         </div>
 

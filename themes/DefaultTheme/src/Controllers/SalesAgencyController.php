@@ -15,9 +15,9 @@ class SalesAgencyController extends Controller
     {
         return view('front::pages.Sales-agency');
     }
-	
+
 	public function store(Request $request){
-		
+
 		$request->merge(['start_activity_date'=>$request->filled('start_activity_date') ? faTOen($request->start_activity_date) : null]);
 		 $request->validate([
             'name' => 'required|string',
@@ -57,7 +57,7 @@ class SalesAgencyController extends Controller
 			 'address' => 'آدرس',
 			 'description' => 'جزئیات',
 			 'project_title' => 'عنوان قرارداد یا پروژه',
-			 'has_elling_software_products' => 'حوزه فروش محصولات نرم افزاری',
+			 'has_elling_software_products' => 'حوزه فروش خودروها نرم افزاری',
 			 'level_of_education' => 'میزان تحصیلات',
 			 'work_experience_description' => 'سوابق کاری',
 			 'cv' => 'فایل رزومه',
@@ -96,7 +96,7 @@ class SalesAgencyController extends Controller
 					 'cv' => $cv,
 				]);
 				return redirect()->route('front.sales-agency.index')->with(['success'=>"ثبت اطلاعات با موفقیت انجام شد"]);
-			}); 
+			});
 		}catch(\Throwable $e){
 			return redirect()->route('front.sales-agency.index')->with(['error'=>"خطا در ثبت اطلاعات"]);
 		}

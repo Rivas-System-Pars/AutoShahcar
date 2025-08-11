@@ -168,7 +168,7 @@ class Price extends Model
             if ($with_attributes) {
                 return [
                     'status'  => false,
-                    'message' => 'حداقل تعداد برای محصول "' . $this->product->title . '"' . $this->getAttributesName() . ' "' . $this->cart_min . '" میباشد'
+                    'message' => 'حداقل تعداد برای خودرو "' . $this->product->title . '"' . $this->getAttributesName() . ' "' . $this->cart_min . '" میباشد'
                 ];
             }
 
@@ -182,13 +182,13 @@ class Price extends Model
             if ($with_attributes) {
                 return [
                     'status'  => false,
-                    'message' => 'موجودی محصول "' . $this->product->title . ' ' . $this->getAttributesName() . '" کافی نیست.'
+                    'message' => 'موجودی خودرو "' . $this->product->title . ' ' . $this->getAttributesName() . '" کافی نیست.'
                 ];
             }
 
             return [
                 'status'  => false,
-                'message' => 'موجودی محصول کافی نمی باشد'
+                'message' => 'موجودی خودرو کافی نمی باشد'
             ];
         }
 

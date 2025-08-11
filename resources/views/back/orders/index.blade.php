@@ -192,7 +192,7 @@
                             <div class="col-md-6">
                                 <div class="custom-control custom-checkbox custom-checkbox-success">
                                     <input id="export-checkbox-products" type="checkbox" class="custom-control-input" name="filters[products]" value="1" checked>
-                                    <label class="custom-control-label" for="export-checkbox-products">لیست محصولات</label>
+                                    <label class="custom-control-label" for="export-checkbox-products">لیست خودروها</label>
                                 </div>
                             </div>
                         </div>

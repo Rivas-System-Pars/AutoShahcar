@@ -223,7 +223,7 @@ class Omidpay extends Driver
             'erMts_InvalidGoodsReferenceIdLen' => 'طول شناسه خرید معتبر نمی‌باشد.',
             'erMts_InvalidMerchantGoodsReferenceIdLen' => 'طول شناسه خرید پذیرنده معتبر نمی‌باشد.',
             'erMts_InvalidMobileNo' => 'فرمت شماره موبایل معتبر نمی‌باشد.',
-            'erMts_InvalidPorductId' => 'طول یا فرمت کد محصول معتبر نمی‌باشد.',
+            'erMts_InvalidPorductId' => 'طول یا فرمت کد خودرو معتبر نمی‌باشد.',
             'erMts_InvalidRedirectUrl' => 'طول یا فرمت آدرس صفحه رجوع معتبر نمی‌باشد.',
             'erMts_InvalidReferenceNum' => 'طول یا فرمت شماره رفرنس معتبر نمی‌باشد.',
             'erMts_InvalidRequestParam' => 'پارامترهای درخواست معتبر نمی‌باشد.',

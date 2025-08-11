@@ -9,5 +9,6 @@ class UserPlan extends Model
 {
     use HasFactory;
 
+    protected $table = 'user_plans';
     protected $guarded = ['id'];
 }

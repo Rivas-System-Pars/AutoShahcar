@@ -1,6 +1,6 @@
 <div class="ah-tab-content dt-sl">
     <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 dt-sl">
-        <h2>فایل های محصول</h2>
+        <h2>فایل های خودرو</h2>
     </div>
 
     <input id="cart-quantity" class="quantity" value="1" type="hidden">

@@ -19,12 +19,18 @@ class TicketController extends Controller
     public function index()
     {
         $tickets = Ticket::latest()->paginate(20);
+        $ticketscount =Ticket::where('status' , 'خوانده نشده')->count();
 
-        return view('back.tickets.index', compact('tickets'));
+        return view('back.tickets.index', compact('tickets' , 'ticketscount'));
     }
 
     public function show(Ticket $ticket)
     {
+
+        if ($ticket->status === 'خوانده نشده') {
+            $ticket->update(['status' => 'خوانده شده']);
+        }
+
         return view('back.tickets.show', compact('ticket'));
     }
 

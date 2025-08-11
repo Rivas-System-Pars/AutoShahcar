@@ -190,7 +190,7 @@ return [
         'link'                  => 'لینک',
         'category_id'           => 'دسته بندی',
         'postcat'               => 'دسته بندی وبلاگ',
-        'productcat'            => 'دسته بندی محصول',
+        'productcat'            => 'دسته بندی خودرو',
         'province_id'           => 'استان',
         'city_id'               => 'شهر',
         'postal_code'           => 'کد پستی',

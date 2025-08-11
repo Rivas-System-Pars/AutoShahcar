@@ -8,7 +8,7 @@ $('.counter-box .inc').on('click', function (e) {
         parseInt($(this).parent().find('.cart_quantity').attr('max'))
     ) {
         toastr.error(
-            'شما بیشترین تعداد ممکن برای این محصول را انتخاب کرده اید.'
+            'شما بیشترین تعداد ممکن برای این خودرو را انتخاب کرده اید.'
         );
         e.preventDefault();
     }

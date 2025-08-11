@@ -64,7 +64,7 @@
                                             <div class="col-md-6">
                                                 <div class="row">
                                                     <dt class="col-md-3">وضعیت :</dt>
-                                                    <dd class="col-md-6">{{ $ticket->statusText() }}</dd>
+                                                    <dd class="col-md-6">{{ $ticket->status}}</dd>
                                                 </div>
                                             </div>
 

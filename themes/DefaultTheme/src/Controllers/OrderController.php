@@ -729,7 +729,7 @@ class OrderController extends Controller
         if ($amount >= 0) {
 
             $result = $order->payUsingWallet();
-			
+
 
             if ($result) {
                 return $this->orderPaid($order);
@@ -797,16 +797,21 @@ private function orderPaid(Order $order)
     event(new OrderPaid($order));
 
     $item = $order->items()->first();
+
     $att = 0;
 
     if ($item) {
         $price = Price::find($item->price_id);
         if ($price && $price->get_attributes()->first()) {
-            $att = (int) $price->get_attributes()->first()->name;
+            // dd($price->get_attributes()->first());
+            $att = (int) $price->get_attributes()->first()->month;
         }
     }
 
+
+
     $end_date = $att ? Carbon::now()->addMonths($att) : null;
+    // dd($att);
 
     $userPlan = UserPlan::where('user_id', auth()->id())->first();
 
@@ -835,7 +840,7 @@ private function orderPaid(Order $order)
             'status' => 'active',
         ]);
     }
-	//dd($cart->items());	   
+	//dd($cart->items());
     $cart->delete();
 
 

@@ -27,11 +27,11 @@
 							</div>
 							@endif
 							<div class="col-12 mb-4">
-	<p>در شرکت ریواس سیستم پارس، ما به ارزش‌های نوآوری و رضایت مشتری پایبند هستیم. با درک اینکه هر کسب‌وکاری نیازمند راه‌حل‌هایی منحصر به فرد است، ما ارائه دموی آنلاین محصولات نرم‌افزاری خود را به شما پیشنهاد می‌دهیم تا بتوانید قبل از تصمیم‌گیری برای خرید، عملکرد و ویژگی‌های محصولات ما را به خوبی بررسی کنید.</p>
+	<p>در شرکت ریواس سیستم پارس، ما به ارزش‌های نوآوری و رضایت مشتری پایبند هستیم. با درک اینکه هر کسب‌وکاری نیازمند راه‌حل‌هایی منحصر به فرد است، ما ارائه دموی آنلاین خودروها نرم‌افزاری خود را به شما پیشنهاد می‌دهیم تا بتوانید قبل از تصمیم‌گیری برای خرید، عملکرد و ویژگی‌های خودروها ما را به خوبی بررسی کنید.</p>
                                             </div>
                             <div class="col-lg-6">
                                 <div class="form-ui additional-info dt-sl">
-                                    
+
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-row-title">
@@ -44,10 +44,10 @@
 												<span class="text-sm text-danger">{{ $message }}</span>
 												@enderror
                                             </div>
-											
+
 <div class="col-lg-12 mt-4">
                                                 <div class="form-row-title">
-                                                    <h3>محصول مورد نظر</h3>
+                                                    <h3>خودرو مورد نظر</h3>
                                                 </div>
                                                 <div class="form-row form-group">
                                                     <select class="input-ui pl-2" name="product">
@@ -60,18 +60,18 @@
 												<span class="text-sm text-danger">{{ $message }}</span>
 												@enderror
                                             </div>
-											
-											
+
+
 
                                         </div>
 
-                                        
-                                    
+
+
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-ui additional-info dt-sl">
-                                   
+
                                         <div class="row">
 											<div class="col-lg-12 ">
                                                 <div class="form-row-title">
@@ -99,8 +99,8 @@
 												<span class="text-sm text-danger">{{ $message }}</span>
 												@enderror
                                             </div>
-                                            
-                                        
+
+
 
                                     </div>
                                 </div>

@@ -12,11 +12,11 @@
 <section class="product_home w-100 d-flex align-items-center justify-content-center py-3">
 
             <div class="product_swiper swiper w-100">
-				
+
                 <div class="w-100 swiper-wrapper h-100">
-					
+
 					@foreach($products as $product)
-					
+
 
                     <article class="product_article swiper-slide vajar_color w-100 h-100 ">
 
@@ -25,7 +25,7 @@
 
                         <div class="product_info-button-container  ">
                             <a href="{{env('APP_URL').'products/'.$product->slug}}" class="product_info-button ">
-                                <span>مشاهده محصول</span>
+                                <span>مشاهده خودرو</span>
                                 <i class="fa-solid fa-arrow-left-long"></i>
                             </a>
                         </div>
@@ -75,7 +75,7 @@
 
                         <div class="product_info-button-container  ">
                             <a href="" class="product_info-button ">
-                                <span>مشاهده محصول</span>
+                                <span>مشاهده خودرو</span>
                                 <i class="fa-solid fa-arrow-left-long"></i>
                             </a>
                         </div>
@@ -137,7 +137,7 @@
 
                         <div class="product_info-button-container  ">
                             <a href="" class="product_info-button ">
-                                <span>مشاهده محصول</span>
+                                <span>مشاهده خودرو</span>
                                 <i class="fa-solid fa-arrow-left-long"></i>
                             </a>
                         </div>

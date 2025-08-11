@@ -131,7 +131,7 @@
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-group">
-                                                                <label>کمترین تعداد محصول در سبد</label>
+                                                                <label>کمترین تعداد خودرو در سبد</label>
                                                                 <input type="number" class="form-control" name="least_products_count">
                                                             </div>
                                                         </div>
@@ -194,11 +194,11 @@
                                                     <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label>محصولاتی که شامل تخیف میشوند</label>
+                                                                <label>خودروهای که شامل تخیف میشوند</label>
                                                                 <select id="discount-products-include" class="form-control" name="include_type">
-                                                                    <option value="all">اعمال روی همه محصولات</option>
+                                                                    <option value="all">اعمال روی همه خودروها</option>
                                                                     <option value="category">انتخاب دسته بندی</option>
-                                                                    <option value="product">انتخاب محصول</option>
+                                                                    <option value="product">انتخاب خودرو</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -217,7 +217,7 @@
                                                                 </select>
                                                             </div>
                                                             <div id="products-include" class="form-group" style="display: none;">
-                                                                <label>انتخاب محصولات</label>
+                                                                <label>انتخاب خودروها</label>
                                                                 <select id="products-include-select" class="form-control" name="include_products" multiple>
                                                                     @foreach ($products as $product)
                                                                         <option value="{{ $product->id }}">{{ $product->title }}</option>
@@ -230,11 +230,11 @@
                                                     <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label>محصولاتی که شامل تخیف نمی شوند</label>
+                                                                <label>خودروهای که شامل تخیف نمی شوند</label>
                                                                 <select id="discount-products-exclude" class="form-control" name="exclude_type">
                                                                     <option value="none">هیچ کدام</option>
                                                                     <option value="category">انتخاب دسته بندی</option>
-                                                                    <option value="product">انتخاب محصول</option>
+                                                                    <option value="product">انتخاب خودرو</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -253,7 +253,7 @@
                                                                 </select>
                                                             </div>
                                                             <div id="products-exclude" class="form-group" style="display: none;">
-                                                                <label>انتخاب محصولات</label>
+                                                                <label>انتخاب خودروها</label>
                                                                 <select id="products-exclude-select" class="form-control" name="exclude_products" multiple>
                                                                     @foreach ($products as $product)
                                                                         <option value="{{ $product->id }}">{{ $product->title }}</option>
@@ -286,7 +286,7 @@
                                                                             <i class="vs-icon feather icon-check"></i>
                                                                         </span>
                                                                     </span>
-                                                                    <span>مستثنی کردن محصولات تخفیف دار</span>
+                                                                    <span>مستثنی کردن خودروها تخفیف دار</span>
                                                                 </div>
                                                             </fieldset>
                                                         </div>

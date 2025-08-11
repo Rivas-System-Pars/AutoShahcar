@@ -24,7 +24,7 @@ class Transaction extends Model
         switch ($this->transactionable_type) {
             case Order::class:
             {
-                $type = 'خرید محصول';
+                $type = 'خرید خودرو';
                 break;
             }
             case WalletHistory::class:

@@ -1,4 +1,4 @@
-@extends('front::layouts.master', ['title' => 'مقایسه محصول'])
+@extends('front::layouts.master', ['title' => 'مقایسه خودرو'])
 
 @push('meta')
     <meta name="robots" content="noindex, nofollow" />
@@ -21,7 +21,7 @@
                                             data-target="#compareModal">
                                             <img src="{{ theme_asset('images/plus.svg') }}">
                                         </a>
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#compareModal">افزودن محصول برای مقایسه</button>
+                                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#compareModal">افزودن خودرو برای مقایسه</button>
                                     </div>
                                 @endif
 
@@ -39,7 +39,7 @@
                                         </a>
                                         <a class="comparison-item-title"
                                             href="{{ route('front.products.show', ['product' => $product]) }}">{{ $product->title }}</a>
-                                        <a class="btn btn-primary btn-sm" href="{{ route('front.products.show', ['product' => $product]) }}">مشاهده محصول</a>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('front.products.show', ['product' => $product]) }}">مشاهده خودرو</a>
                                     </div>
                                 </td>
                             @endforeach
@@ -116,7 +116,7 @@
             'similar_products' => $similar_products,
             'current_url' => url()->current(),
         ])
-        
+
     @endif
 @endsection
 

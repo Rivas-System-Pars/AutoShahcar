@@ -453,7 +453,7 @@ $(document).ready(function (l) {
                     Swal.fire({
                         type: 'success',
                         title: 'با موفقیت اضافه شد',
-                        text: 'محصول مورد نظر با موفقیت به سبد خرید شما اضافه شد برای رزرو محصول سفارش خود را نهایی کنید.',
+                        text: 'خودرو مورد نظر با موفقیت به سبد خرید شما اضافه شد برای رزرو خودرو سفارش خود را نهایی کنید.',
                         confirmButtonText: 'باشه',
                         footer: '<h5><a href="/cart">مشاهده سبد خرید</a></h5>'
                     });
@@ -750,31 +750,31 @@ $(document).ready(function () {
             $(".counter_product_container").each(function () {
                 let $widget = $(this);
                 let id = $widget.data("id");
-    
+
                 let data = response[id];
                 if (!data) {
                     console.warn("داده‌ای برای id " + id + " پیدا نشد.");
                     return;
                 }
-    
+
                 let [y, m, d] = data.end_date.split("/").map(Number);
-    
+
                 // اضافه کردن "00" به آخر ساعت
                 let jalaliTime = data.end_time.trim();
                 if (jalaliTime.split(":").length === 2) {
                     jalaliTime += ":00"; // اگر ثانیه نداشت، اضافه می‌کنیم
                 }
                 let [hh, mm, ss] = jalaliTime.split(":").map(Number);
-    
+
                 let gDate = jalaali.toGregorian(y, m, d);
                 let targetDate = new Date(gDate.gy, gDate.gm - 1, gDate.gd, hh, mm, ss);
-    
+
                 $widget.countdown(targetDate, function (event) {
                     $widget.find(".amazing_days").text(event.strftime("%D"));
                     $widget.find(".amazing_hours").text(event.strftime("%H"));
                     $widget.find(".amazing_minutes").text(event.strftime("%M"));
                     $widget.find(".amazing_seconds").text(event.strftime("%S"));
-    
+
                     if (event.strftime("%D") === "00") {
                         $widget.find(".days").hide();
                         $widget.find(".days-spacer").hide();
@@ -786,9 +786,9 @@ $(document).ready(function () {
             console.error("خطا در دریافت اطلاعات:", error);
         }
     });
-    
-    
-    
+
+
+
 });
 
 $(window).on('resize', function() {
@@ -802,7 +802,7 @@ $(window).on('resize', function() {
       });
     }
   });
-  
+
   // Trigger it once on load
   $(document).ready(function() {
     $(window).trigger('resize');
@@ -817,7 +817,7 @@ $(document).ready(function () {
         slidesPerView: 1,
         spaceBetween: 20,
         breakpoints: {
-            
+
 			320: { slidesPerView: 2.2, spaceBetween: 2 },
             390: { slidesPerView: 2.8, spaceBetween: 2 },
             460: { slidesPerView: 3.2, spaceBetween: 2 },
@@ -837,7 +837,7 @@ $(document).ready(function () {
             2560: { slidesPerView: 14.5, spaceBetween: 2 },
             3200: { slidesPerView: 17, spaceBetween: 2 },
             3840: { slidesPerView: 20, spaceBetween: 2 },
-			
+
         },
         pagination: {
             el: ".swiper-pagination",

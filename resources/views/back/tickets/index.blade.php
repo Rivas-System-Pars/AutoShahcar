@@ -30,6 +30,7 @@
                     <section class="card">
                         <div class="card-header">
                             <h4 class="card-title">لیست تیکت ها</h4>
+                            <h6>تعداد تیکت های خوانده نشده : {{$ticketscount}}</h6>
                         </div>
                         <div class="card-content" id="main-card">
                             <div class="card-body">
@@ -40,6 +41,7 @@
                                                 <th>موضوع</th>
                                                 <th>کاربر مربوطه</th>
                                                 <th>اولویت</th>
+                                                <th>وضعیت</th>
                                                 <th class="text-center">عملیات</th>
                                             </tr>
                                         </thead>
@@ -50,6 +52,8 @@
                                                     <td>{{ $ticket->subject }}</td>
                                                     <td>{{ $ticket->user->fullname }}</td>
                                                     <td>{{ $ticket->priorityText() }}</td>
+                                                    <td>{{ $ticket->status}}</td>
+
 
                                                     <td class="text-center">
                                                         <a href="{{ route('admin.tickets.show', ['ticket' => $ticket]) }}" class="btn btn-info waves-effect waves-light">مشاهده</a>

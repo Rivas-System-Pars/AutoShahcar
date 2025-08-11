@@ -194,7 +194,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-12">
-                            <p>آیا تمایل به حذف این محصول از لیست علاقمندی ها دارید؟</p>
+                            <p>آیا تمایل به حذف این خودرو از لیست علاقمندی ها دارید؟</p>
 
                             <div class="form-ui dt-sl">
                                 <form id="favorite-remove-form" action="#" method="POST">

@@ -7,6 +7,7 @@ use App\Models\Label;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Tag;
+use App\Models\Ticket;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -16,11 +17,15 @@ class MainController extends Controller
 {
     public function index()
     {
+        // dd('jvdus');
         $users_count    = User::where('level', '!=', 'creator')->count();
         $products_count = Product::count();
         $orders_count   = Order::count();
         $total_sell     = Order::where('status', 'paid')->sum('price');
         $userPlan = UserPlan::where('user_id', auth()->user()->id)->where('status','active')->first();
+        $ticketscount =Ticket::where('status' , 'خوانده نشده')->count();
+
+
 
         if ($userPlan && $userPlan->end_date) {
             $remainingDays = Carbon::now()->diffInDays(
@@ -35,7 +40,8 @@ class MainController extends Controller
             'products_count',
             'orders_count',
             'total_sell',
-            'remainingDays'
+            'remainingDays',
+            'ticketscount'
         ));
     }
 

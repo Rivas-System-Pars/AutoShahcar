@@ -1,7 +1,7 @@
 <div id="serviceCarousel" class="carousel slide" data-interval="false" data-aos="fade-up" data-aos-duration="1000">
     <div class="Option_Card_Title container">
         <div class="Option_Card_Right_Line"></div>
-        <h2 class="Option_Card_Center_Line">پلن تعرفه محصولات شرکت</h2>
+        <h2 class="Option_Card_Center_Line">پلن تعرفه خودروها شرکت</h2>
         <div class="Option_Card_Left_Line"></div>
     </div>
     <div class="container service-Menu-Choser-Responsive">
@@ -353,13 +353,13 @@
                                 سفارش</button></a>
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
         <div class="carousel-item">
             <div class="row service-card-responsive g-0">
-                
+
                 <div class="service-card ">
                     <div class="service-banner">
                         <div class="service-banner-content">

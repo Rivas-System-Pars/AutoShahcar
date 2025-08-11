@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <div class="content-body">
             <!-- Description -->
@@ -31,7 +31,7 @@
                 <div class="card-header">
                     <h4 class="card-title">ایجاد ویژگی جدید</h4>
                 </div>
-                
+
                 <div id="main-card" class="card-content">
                     <div class="card-body">
                         <div class="col-12 col-md-10 offset-md-1">
@@ -63,10 +63,17 @@
                                                 <input type="color" class="form-control" name="value">
                                             </div>
                                         </div>
-                                        
-                                        
+                                        <div  class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>تعداد ماه</label>
+                                                <small style="color: red"> (برای تعرفه پلن ها  حتما به صورت عددی وارد شود)</small>
+                                                <input type="text" class="form-control" name="month">
+                                            </div>
+                                        </div>
+
+
                                     </div>
-                                    
+
                                     <div class="row">
                                         <div class="col-12 text-right">
                                             <button type="submit" class="btn btn-primary mb-1 waves-effect waves-light">ایجاد ویژگی</button>
@@ -79,14 +86,14 @@
                 </div>
             </section>
             <!--/ Description -->
-            
+
         </div>
     </div>
 </div>
 
 @endsection
 
-@push('scripts') 
+@push('scripts')
     <script src="{{ asset('back/app-assets/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('back/app-assets/plugins/jquery-validation/localization/messages_fa.min.js') }}"></script>
 

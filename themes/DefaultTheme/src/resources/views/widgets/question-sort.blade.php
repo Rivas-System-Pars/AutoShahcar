@@ -72,7 +72,7 @@
             <div id="Q5" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
 
-همه محصولات شرکت دارای ابزارهای مدیریت پیشرفته و داینامیک SEO از جمله مدیریت متاتگ‌ها، URLهای بهینه، کلیدواژه‌ها و توضیحات (Page Description) و موضوع صفحه (Page Title) است. همچنین می‌توانید از راهنمای SEO  ما برای بهبود رتبه فروشگاه خود در موتورهای جستجو استفاده کنید.
+همه خودروها شرکت دارای ابزارهای مدیریت پیشرفته و داینامیک SEO از جمله مدیریت متاتگ‌ها، URLهای بهینه، کلیدواژه‌ها و توضیحات (Page Description) و موضوع صفحه (Page Title) است. همچنین می‌توانید از راهنمای SEO  ما برای بهبود رتبه فروشگاه خود در موتورهای جستجو استفاده کنید.
 
 				</div>
             </div>
@@ -88,7 +88,7 @@
             <div id="Q6" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
 
-کلیه سامانه‌ها را می توانید در خروجی ها و قالب های مختلف راه اندازی کنید. این نرم افزارها در حالت کلی قابلیت سازگاری با قالب‌های مختلف (templatebase) را دارند. چند زبانه (multilingual) هستند و امکان راه اندازی به چندین زبان برایشان فراهم است و از قیمت‌گذاری محصولات با ارزهای مختلف پشتیبانی می‌کنند.
+کلیه سامانه‌ها را می توانید در خروجی ها و قالب های مختلف راه اندازی کنید. این نرم افزارها در حالت کلی قابلیت سازگاری با قالب‌های مختلف (templatebase) را دارند. چند زبانه (multilingual) هستند و امکان راه اندازی به چندین زبان برایشان فراهم است و از قیمت‌گذاری خودروها با ارزهای مختلف پشتیبانی می‌کنند.
 
 				</div>
             </div>
@@ -98,7 +98,7 @@
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#Q7" aria-expanded="false" aria-controls="Q7">
-                    آیا امکان سفارشی‌سازی فرآیندهای فروش و خرید در کلیه محصولات شرکت وجود دارد؟
+                    آیا امکان سفارشی‌سازی فرآیندهای فروش و خرید در کلیه خودروها شرکت وجود دارد؟
                 </button>
             </h2>
             <div id="Q7" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -121,7 +121,7 @@
                 <div class="accordion-body">
 
 
-محصولات شرکت با داشبورد جامع خود، گزارش‌های دقیق فروش و سفارشات، کاربران و بازدیدها و لاگ سیستم پیشرفته‌ای که در اختیار شما قرار می‌دهند و به پیشرفت کسب و کارتان کمک می‌کند.همچنین می‌توانید از یکپارچگی با ابزارهایی مانند Google Analytics برای تحلیل‌های پیشرفته‌تر استفاده کنید.
+خودروها شرکت با داشبورد جامع خود، گزارش‌های دقیق فروش و سفارشات، کاربران و بازدیدها و لاگ سیستم پیشرفته‌ای که در اختیار شما قرار می‌دهند و به پیشرفت کسب و کارتان کمک می‌کند.همچنین می‌توانید از یکپارچگی با ابزارهایی مانند Google Analytics برای تحلیل‌های پیشرفته‌تر استفاده کنید.
 
 				</div>
             </div>
@@ -131,13 +131,13 @@
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#Q9" aria-expanded="false" aria-controls="Q9">
-                    آیا امکان ایجاد کدهای تخفیف و جشنواره‌های فروش در محصولات شرکت وجود دارد؟
+                    آیا امکان ایجاد کدهای تخفیف و جشنواره‌های فروش در خودروها شرکت وجود دارد؟
                 </button>
             </h2>
             <div id="Q9" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
 
-همه محصولات شرکت ابزارهای متنوعی برای ایجاد کدهای تخفیف، پیشنهادات ویژه و راه‌اندازی جشنواره‌های فروش ارائه می‌دهند که به افزایش فروش و حفظ مشتریان کسب وکارها کمک می‌کنند.
+همه خودروها شرکت ابزارهای متنوعی برای ایجاد کدهای تخفیف، پیشنهادات ویژه و راه‌اندازی جشنواره‌های فروش ارائه می‌دهند که به افزایش فروش و حفظ مشتریان کسب وکارها کمک می‌کنند.
 
 				</div>
             </div>
@@ -152,7 +152,7 @@
             </h2>
             <div id="Q10" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-					برای همه محصولات شرکت ابزارهایی برای ویرایش بخش‌های مختلف رابط کاربری فراهم شده است. شما می‌توانید از امکان مدیریت  قالب استفاده کنید یا طراحی اختصاصی خود را با کمک تیم فنی ما پیاده‌سازی کنید.
+					برای همه خودروها شرکت ابزارهایی برای ویرایش بخش‌های مختلف رابط کاربری فراهم شده است. شما می‌توانید از امکان مدیریت  قالب استفاده کنید یا طراحی اختصاصی خود را با کمک تیم فنی ما پیاده‌سازی کنید.
 				</div>
             </div>
         </div>
@@ -161,7 +161,7 @@
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#Q11" aria-expanded="false" aria-controls="Q11">
-					چگونه می‌توانم فرآیند ارسال محصولات را در فروشگاه مدیریت کنم؟
+					چگونه می‌توانم فرآیند ارسال خودروها را در فروشگاه مدیریت کنم؟
 				</button>
             </h2>
             <div id="Q11" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -184,7 +184,7 @@
                 <div class="accordion-body">
 
 
-کلیه محصولات شرکت قابلیت اتصال مستقیم به شبکه‌های اجتماعی مانند اینستاگرام و فیسبوک و تلگرام را فراهم می‌کند. شما می‌توانید محصولات خود را مستقیماً در این شبکه‌ها نمایش داده و در فروشگاه آنلاین خود بفروشبد.
+کلیه خودروها شرکت قابلیت اتصال مستقیم به شبکه‌های اجتماعی مانند اینستاگرام و فیسبوک و تلگرام را فراهم می‌کند. شما می‌توانید خودروها خود را مستقیماً در این شبکه‌ها نمایش داده و در فروشگاه آنلاین خود بفروشبد.
 
 				</div>
             </div>
@@ -194,14 +194,14 @@
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#Q13" aria-expanded="false" aria-controls="Q13">
-					آیا کلیه سامانه‌ها از فروش محصولات دیجیتال پشتیبانی می‌کند؟
+					آیا کلیه سامانه‌ها از فروش خودروها دیجیتال پشتیبانی می‌کند؟
 				</button>
             </h2>
             <div id="Q13" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
 
 
-همه محصولات شرکت امکان فروش محصولات دیجیتال مانند فایل‌ها، ویدئوها و اشتراک‌های آنلاین را با قابلیت دانلود امن و مدیریت دسترسی ارائه می‌دهد.
+همه خودروها شرکت امکان فروش خودروها دیجیتال مانند فایل‌ها، ویدئوها و اشتراک‌های آنلاین را با قابلیت دانلود امن و مدیریت دسترسی ارائه می‌دهد.
 
 				</div>
             </div>
@@ -211,7 +211,7 @@
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#Q14" aria-expanded="false" aria-controls="Q14">
-					پشتیبانی فنی محصولات شرکت چگونه است و چه خدماتی شامل می‌شود؟
+					پشتیبانی فنی خودروها شرکت چگونه است و چه خدماتی شامل می‌شود؟
 				</button>
             </h2>
             <div id="Q14"class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -397,7 +397,7 @@
                                     class="accordion-collapse collapse the_accordion_collapse show"
                                     aria-labelledby="panelsStayOpen-heading5">
                                     <div class="accordion-body the_accordion_body">
-                                        همه محصولات شرکت دارای ابزارهای مدیریت پیشرفته و داینامیک SEO از جمله مدیریت متاتگ‌ها، URLهای بهینه، کلیدواژه‌ها و توضیحات (Page Description) و موضوع صفحه (Page Title) است. همچنین می‌توانید از راهنمای SEO  ما برای بهبود رتبه فروشگاه خود در موتورهای جستجو استفاده کنید.
+                                        همه خودروها شرکت دارای ابزارهای مدیریت پیشرفته و داینامیک SEO از جمله مدیریت متاتگ‌ها، URLهای بهینه، کلیدواژه‌ها و توضیحات (Page Description) و موضوع صفحه (Page Title) است. همچنین می‌توانید از راهنمای SEO  ما برای بهبود رتبه فروشگاه خود در موتورهای جستجو استفاده کنید.
 
                                     </div>
                                 </div>
@@ -432,7 +432,7 @@
                                     class="accordion-collapse collapse the_accordion_collapse show"
                                     aria-labelledby="panelsStayOpen-heading6">
                                     <div class="accordion-body the_accordion_body">
-                                        کلیه سامانه‌ها را می توانید در خروجی ها و قالب های مختلف راه اندازی کنید. این نرم افزارها در حالت کلی قابلیت سازگاری با قالب‌های مختلف (templatebase) را دارند. چند زبانه (multilingual) هستند و امکان راه اندازی به چندین زبان برایشان فراهم است و از قیمت‌گذاری محصولات با ارزهای مختلف پشتیبانی می‌کنند.
+                                        کلیه سامانه‌ها را می توانید در خروجی ها و قالب های مختلف راه اندازی کنید. این نرم افزارها در حالت کلی قابلیت سازگاری با قالب‌های مختلف (templatebase) را دارند. چند زبانه (multilingual) هستند و امکان راه اندازی به چندین زبان برایشان فراهم است و از قیمت‌گذاری خودروها با ارزهای مختلف پشتیبانی می‌کنند.
 
                                     </div>
                                 </div>
@@ -458,7 +458,7 @@
                                         data-bs-target="#panelsStayOpen-collapse7" aria-expanded="true"
                                         aria-controls="panelsStayOpen-collapse7">
 
-                                        آیا امکان سفارشی‌سازی فرآیندهای فروش و خرید در کلیه محصولات شرکت وجود دارد؟
+                                        آیا امکان سفارشی‌سازی فرآیندهای فروش و خرید در کلیه خودروها شرکت وجود دارد؟
 
 
                                     </button>
@@ -502,7 +502,7 @@
                                     class="accordion-collapse collapse the_accordion_collapse show"
                                     aria-labelledby="panelsStayOpen-heading8">
                                     <div class="accordion-body the_accordion_body">
-                                        محصولات شرکت با داشبورد جامع خود، گزارش‌های دقیق فروش و سفارشات، کاربران و بازدیدها و لاگ سیستم پیشرفته‌ای که در اختیار شما قرار می‌دهند و به پیشرفت کسب و کارتان کمک می‌کند.همچنین می‌توانید از یکپارچگی با ابزارهایی مانند Google Analytics برای تحلیل‌های پیشرفته‌تر استفاده کنید.
+                                        خودروها شرکت با داشبورد جامع خود، گزارش‌های دقیق فروش و سفارشات، کاربران و بازدیدها و لاگ سیستم پیشرفته‌ای که در اختیار شما قرار می‌دهند و به پیشرفت کسب و کارتان کمک می‌کند.همچنین می‌توانید از یکپارچگی با ابزارهایی مانند Google Analytics برای تحلیل‌های پیشرفته‌تر استفاده کنید.
 
                                     </div>
                                 </div>
@@ -528,7 +528,7 @@
                                         data-bs-target="#panelsStayOpen-collapse9" aria-expanded="true"
                                         aria-controls="panelsStayOpen-collapse9">
 
-                                        آیا امکان ایجاد کدهای تخفیف و جشنواره‌های فروش در محصولات شرکت وجود دارد؟
+                                        آیا امکان ایجاد کدهای تخفیف و جشنواره‌های فروش در خودروها شرکت وجود دارد؟
 
 
                                     </button>
@@ -537,7 +537,7 @@
                                     class="accordion-collapse collapse the_accordion_collapse show"
                                     aria-labelledby="panelsStayOpen-heading9">
                                     <div class="accordion-body the_accordion_body">
-                                        همه محصولات شرکت ابزارهای متنوعی برای ایجاد کدهای تخفیف، پیشنهادات ویژه و راه‌اندازی جشنواره‌های فروش ارائه می‌دهند که به افزایش فروش و حفظ مشتریان کسب وکارها کمک می‌کنند.
+                                        همه خودروها شرکت ابزارهای متنوعی برای ایجاد کدهای تخفیف، پیشنهادات ویژه و راه‌اندازی جشنواره‌های فروش ارائه می‌دهند که به افزایش فروش و حفظ مشتریان کسب وکارها کمک می‌کنند.
 
                                     </div>
                                 </div>
@@ -572,7 +572,7 @@
                                     class="accordion-collapse collapse the_accordion_collapse show"
                                     aria-labelledby="panelsStayOpen-heading10">
                                     <div class="accordion-body the_accordion_body">
-                                        برای همه محصولات شرکت ابزارهایی برای ویرایش بخش‌های مختلف رابط کاربری فراهم شده است. شما می‌توانید از امکان مدیریت  قالب استفاده کنید یا طراحی اختصاصی خود را با کمک تیم فنی ما پیاده‌سازی کنید.
+                                        برای همه خودروها شرکت ابزارهایی برای ویرایش بخش‌های مختلف رابط کاربری فراهم شده است. شما می‌توانید از امکان مدیریت  قالب استفاده کنید یا طراحی اختصاصی خود را با کمک تیم فنی ما پیاده‌سازی کنید.
 
                                     </div>
                                 </div>
@@ -598,7 +598,7 @@
                                         data-bs-target="#panelsStayOpen-collapse11" aria-expanded="true"
                                         aria-controls="panelsStayOpen-collapse11">
 
-                                        چگونه می‌توانم فرآیند ارسال محصولات را در فروشگاه مدیریت کنم؟
+                                        چگونه می‌توانم فرآیند ارسال خودروها را در فروشگاه مدیریت کنم؟
 
 
                                     </button>
@@ -642,7 +642,7 @@
                                     class="accordion-collapse collapse the_accordion_collapse show"
                                     aria-labelledby="panelsStayOpen-heading12">
                                     <div class="accordion-body the_accordion_body">
-                                        کلیه محصولات شرکت قابلیت اتصال مستقیم به شبکه‌های اجتماعی مانند اینستاگرام و فیسبوک و تلگرام را فراهم می‌کند. شما می‌توانید محصولات خود را مستقیماً در این شبکه‌ها نمایش داده و در فروشگاه آنلاین خود بفروشبد.
+                                        کلیه خودروها شرکت قابلیت اتصال مستقیم به شبکه‌های اجتماعی مانند اینستاگرام و فیسبوک و تلگرام را فراهم می‌کند. شما می‌توانید خودروها خود را مستقیماً در این شبکه‌ها نمایش داده و در فروشگاه آنلاین خود بفروشبد.
 
                                     </div>
                                 </div>
@@ -668,7 +668,7 @@
                                         data-bs-target="#panelsStayOpen-collapse13" aria-expanded="true"
                                         aria-controls="panelsStayOpen-collapse13">
 
-                                        آیا کلیه سامانه‌ها از فروش محصولات دیجیتال پشتیبانی می‌کند؟
+                                        آیا کلیه سامانه‌ها از فروش خودروها دیجیتال پشتیبانی می‌کند؟
 
 
                                     </button>
@@ -677,7 +677,7 @@
                                     class="accordion-collapse collapse the_accordion_collapse show"
                                     aria-labelledby="panelsStayOpen-heading13">
                                     <div class="accordion-body the_accordion_body">
-                                        همه محصولات شرکت امکان فروش محصولات دیجیتال مانند فایل‌ها، ویدئوها و اشتراک‌های آنلاین را با قابلیت دانلود امن و مدیریت دسترسی ارائه می‌دهد.
+                                        همه خودروها شرکت امکان فروش خودروها دیجیتال مانند فایل‌ها، ویدئوها و اشتراک‌های آنلاین را با قابلیت دانلود امن و مدیریت دسترسی ارائه می‌دهد.
 
                                     </div>
                                 </div>
@@ -703,7 +703,7 @@
                                         data-bs-target="#panelsStayOpen-collapse14" aria-expanded="true"
                                         aria-controls="panelsStayOpen-collapse14">
 
-                                        پشتیبانی فنی محصولات شرکت چگونه است و چه خدماتی شامل می‌شود؟
+                                        پشتیبانی فنی خودروها شرکت چگونه است و چه خدماتی شامل می‌شود؟
 
 
                                     </button>

@@ -14,7 +14,7 @@
                     @csrf
                     <button type="submit" class="btn-primary-cm btn-with-icon add-to-cart">
                         <img data-src="{{ theme_asset('img/theme/shopping-cart.png') }}" alt="">
-                        افزودن محصولات این سبد به سبد خرید
+                        افزودن خودروها این سبد به سبد خرید
                     </button>
                 </form>
             </div>

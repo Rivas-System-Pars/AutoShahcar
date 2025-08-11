@@ -14,9 +14,9 @@
                                 <ol class="breadcrumb no-border">
                                     <li class="breadcrumb-item">مدیریت
                                     </li>
-                                    <li class="breadcrumb-item">مدیریت سبد محصولات
+                                    <li class="breadcrumb-item">مدیریت سبد خودروها
                                     </li>
-                                    <li class="breadcrumb-item active">ایجاد سبد محصول
+                                    <li class="breadcrumb-item active">ایجاد سبد خودرو
                                     </li>
                                 </ol>
                             </div>
@@ -67,13 +67,13 @@
                                                     <div class="row mt-2">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label for="requirements">محصولات موجود در سبد</label>
+                                                                <label for="requirements">خودروها موجود در سبد</label>
                                                                 <select id="requirements" name="requirements[]" multiple class="form-control">
                                                                     @foreach($products as $product)
                                                                         <option value="{{ $product->id }}">{{ $product->title }}</option>
                                                                     @endforeach
                                                                 </select>
-                                                                <label class="text-muted">این محصولات باید خریداری شوند</label>
+                                                                <label class="text-muted">این خودروها باید خریداری شوند</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -98,7 +98,7 @@
                                                 <div class="col-12 text-center">
                                                     <button type="submit"
                                                             class="btn btn-primary mr-1 mb-1 waves-effect waves-light">
-                                                        ایجاد سبد محصول
+                                                        ایجاد سبد خودرو
                                                     </button>
                                                 </div>
                                             </div>

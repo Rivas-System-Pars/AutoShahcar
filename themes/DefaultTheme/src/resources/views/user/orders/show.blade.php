@@ -99,7 +99,7 @@
 
                             </div>
 
-                        
+
                             <div class="col-md-6 col-sm-12">
                                 <span class="title">نحوه ارسال سفارش:</span>
                                 <span class="value">{{ $order->carrier ? $order->carrier->title : 'نامشخص' }}</span>
@@ -311,7 +311,7 @@
                     </div>
 					@endif
 
-                    
+
 
             <div class="col-12">
                 <div
@@ -324,7 +324,7 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>نام محصول</th>
+                                <th>نام خودرو</th>
                                 <th>تعداد</th>
                                 <th>قیمت واحد</th>
                                 <th>قیمت کل</th>
@@ -486,7 +486,7 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>نام محصول</th>
+                                    <th>نام خودرو</th>
                                     <th>تعداد</th>
                                     <th>عملیات</th>
                                 </tr>

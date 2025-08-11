@@ -14,7 +14,7 @@
                         <div class="breadcrumb dt-sl">
                             <nav>
                                 <a href="/">خانه</a>
-                                <a href="{{ route('front.products.index') }}">محصولات</a>
+                                <a href="{{ route('front.products.index') }}">خودروها</a>
                                 <span>{{ 'جستجو برای ' . request('q') }}</span>
                             </nav>
                         </div>

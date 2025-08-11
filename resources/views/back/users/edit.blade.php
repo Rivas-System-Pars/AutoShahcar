@@ -252,9 +252,9 @@
                                             </div>
                                         </div>
                                         <div class="mb-2">
-                                            <div class="mb-1">درصدهای فروش برای محصولات</div>
+                                            <div class="mb-1">درصدهای فروش برای خودروها</div>
                                             <div class="form-group border-bottom pb-1">
-                                                <label>محصولات</label>
+                                                <label>خودروها</label>
                                                 <select id="referral_products" class="form-control">
                                                     @foreach($products as $product)
                                                         <option value="{{ $product->id }}"

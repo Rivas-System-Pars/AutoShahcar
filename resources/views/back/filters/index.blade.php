@@ -14,7 +14,7 @@
                                 <ol class="breadcrumb no-border">
                                     <li class="breadcrumb-item">مدیریت
                                     </li>
-                                    <li class="breadcrumb-item">مدیریت محصولات
+                                    <li class="breadcrumb-item">مدیریت خودروها
                                     </li>
                                     <li class="breadcrumb-item active">لیست فیلترها
                                     </li>
@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="content-body">
-                
+
                 @if($filters->count())
                     <section class="card">
                         <div class="card-header">
@@ -49,14 +49,14 @@
                                                         {{ $filter->id }}
                                                     </td>
                                                     <td>{{ $filter->title }}</td>
-                                                    
+
                                                     <td class="text-center">
                                                         <a href="{{ route('admin.filters.edit', ['filter' => $filter]) }}" class="btn btn-success mr-1 waves-effect waves-light show-filter">ویرایش</a>
                                                         <button data-filter="{{ $filter->id }}" data-id="{{ $filter->id }}" type="button" class="btn btn-danger mr-1 waves-effect waves-light btn-delete"  data-toggle="modal" data-target="#delete-modal">حذف</button>
                                                     </td>
                                                 </tr>
                                             @endforeach
-                                            
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -81,7 +81,7 @@
 
                 {{ $filters->links() }}
 
-                
+
             </div>
         </div>
     </div>
@@ -113,6 +113,6 @@
 
 @endsection
 
-@push('scripts') 
+@push('scripts')
     <script src="{{ asset('back/assets/js/pages/filters/index.js') }}"></script>
 @endpush

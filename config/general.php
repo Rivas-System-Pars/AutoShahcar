@@ -35,12 +35,12 @@ return [
         ],
 
         'products' => [
-            'title'  => 'مدیریت محصولات',
+            'title'  => 'مدیریت خودروها',
             'values' => [
-                'index'         => 'لیست محصولات',
-                'create'        => 'ایجاد محصول',
-                'update'        => 'ویرایش محصول',
-                'delete'        => 'حذف محصول',
+                'index'         => 'لیست خودروها',
+                'create'        => 'ایجاد خودرو',
+                'update'        => 'ویرایش خودرو',
+                'delete'        => 'حذف خودرو',
                 'export'        => 'خروجی گرفتن',
                 'category'      => 'مدیریت دسته بندی ها',
                 'spectypes'     => 'مدیریت نوع مشخصات',
@@ -277,7 +277,7 @@ return [
             'title' => 'وبلاگ'
         ],
         'products' => [
-            'title' => 'محصولات',
+            'title' => 'خودروها',
         ]
     ],
 
@@ -322,7 +322,7 @@ return [
             'type'             => 'admin'
         ],
         'products-create' => [
-            'title'            => 'آموزش ایجاد محصول',
+            'title'            => 'آموزش ایجاد خودرو',
             'link'             => 'https://aparat.com/v/Re0US',
             'type'             => 'admin'
         ],

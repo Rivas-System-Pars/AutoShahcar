@@ -51,7 +51,7 @@
                                                     <option {{ ($order->shipping_status == 'canceled') ? 'selected' : '' }} value="canceled">ارسال لغو شد</option>
                                                 </select>
                                             </fieldset>
-                                            <span>{{ !$order->hasPhysicalItem() ? 'سفارش محصول فیزیکی ندارد' : '' }}</span>
+                                            <span>{{ !$order->hasPhysicalItem() ? 'سفارش خودرو فیزیکی ندارد' : '' }}</span>
                                             <span>{{ ($order->status != 'paid') ? 'سفارش پرداخت نشده است' : '' }}</span>
                                         </div>
                                         <div class="col-md-8">
@@ -247,7 +247,7 @@
                                                 <tr>
                                                     <th>ردیف</th>
                                                     <th>تصویر</th>
-                                                    <th style="width: 300px;">نام محصول</th>
+                                                    <th style="width: 300px;">نام خودرو</th>
                                                     <th>تعداد</th>
                                                     <th>قیمت واحد</th>
                                                     <th>قیمت کل</th>
@@ -306,7 +306,7 @@
                                                 <tr>
                                                     <th>ردیف</th>
                                                     <th>تصویر</th>
-                                                    <th style="width: 300px;">نام محصول</th>
+                                                    <th style="width: 300px;">نام خودرو</th>
                                                     <th>تعداد</th>
                                                 </tr>
                                                 </thead>

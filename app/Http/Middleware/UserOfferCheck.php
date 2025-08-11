@@ -20,22 +20,22 @@ class UserOfferCheck
     public function handle(Request $request, Closure $next)
     {
         // $user = User::find(auth()->user->id);
+        // dd("");
         if(auth()->user()->level == 'admin'){
             $userPlan = UserPlan::where('user_id',auth()->user()->id)->where('status','active')->first();
             if($userPlan && $userPlan->end_date < Carbon::now()){
                 $userPlan->status = 'expired';
                 $userPlan->save();
                 abort(403);
-                
+
             }
             if(!$userPlan)
             {
                 abort(403);
             }
-            
+
 
         }
         return $next($request);
-        // abort(403);
     }
 }

@@ -42,9 +42,10 @@ class RegisteredUserController extends Controller
     public function store(RegisterRequest $request)
     {
         if ($request->level) {
-            $data             = $request->validated();
+            $data = $request->validated();
+
             $data['password'] = Hash::make($data['password']);
-            $data["level"] = "admin";
+            // $data["level"] = "admin";
             $user = User::create($data);
             DB::table("role_user")->insert([
                 "role_id"   =>  4,

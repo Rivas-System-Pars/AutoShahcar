@@ -22,15 +22,15 @@ class StaticFilterSeeder extends Seeder
                 'type'  => 'child_category',
             ],
             [
-                'title' => 'فیلتر موجودی محصول',
+                'title' => 'فیلتر موجودی خودرو',
                 'type'  => 'stock',
             ],
             [
-                'title' => 'فیلتر برند محصول',
+                'title' => 'فیلتر برند خودرو',
                 'type'  => 'brand',
             ],
             [
-                'title' => 'فیلتر قیمت محصول',
+                'title' => 'فیلتر قیمت خودرو',
                 'type'  => 'price',
             ],
         ];

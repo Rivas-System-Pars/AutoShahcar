@@ -14,7 +14,7 @@ class DemoRequestController extends Controller
 		$products = Product::query()->published()->pluck('title','id');
         return view('front::pages.demo-request',compact('products'));
     }
-	
+
 	public function store(Request $request){
 		 $request->validate([
             'name' => 'required|string',
@@ -25,7 +25,7 @@ class DemoRequestController extends Controller
 			'name'=>"نام و نام خانوادگی",
 			 'email' => 'پست الکترونیک',
 			 'mobile' => 'شماره موبایل',
-			 'product' => 'محصول',
+			 'product' => 'خودرو',
 		]);
 		DemoRequest::create([
 			'name' => $request->name,

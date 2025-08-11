@@ -119,7 +119,7 @@ class Sepehr extends Driver
 
         if ($status == "Ok") {
             if ($return_id != $amount) {
-                throw new InvalidPaymentException('مبلغ واریز با قیمت محصول برابر نیست');
+                throw new InvalidPaymentException('مبلغ واریز با قیمت خودرو برابر نیست');
             }
             return $this->createReceipt(Request::input('rrn'));
         } else {
