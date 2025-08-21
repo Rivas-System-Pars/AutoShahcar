@@ -36,7 +36,7 @@ $.ajaxSetup({
         reloadCaptcha();
 
         if (data.status == 403) {
-            toastr.error('اجازه ی دسترسی ندارید', 'خطا', {
+            toastr.error('تاعذب', 'خطا', {
                 positionClass: 'toast-bottom-left',
                 containerId: 'toast-bottom-left'
             });
@@ -144,9 +144,6 @@ $('header.main-header .search-area form.search input').keyup(
                 q: q
             },
             success: function(data) {
-								//console.log('q');
-				//console.log(data)
-
                 $(
                     'header.main-header .search-area form.search .search-result'
                 ).removeClass('open');
@@ -158,9 +155,7 @@ $('header.main-header .search-area form.search input').keyup(
                 ).removeClass('show');
 
                 if (data.length) {
-					
                     $(data).each(function(index, el) {
-						   // 👈 This logs each individual result
                         $(
                             'header.main-header .search-area form.search .search-result ul'
                         ).append(
