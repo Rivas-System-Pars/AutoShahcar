@@ -404,7 +404,7 @@ transition:scale 0.3s ease;
 /* header */
 
 header.main-header {
-    background-color: #fff;
+    background-color: #282a32;
     -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
     position: relative;

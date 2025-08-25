@@ -1,5 +1,5 @@
 <!-- Start footer -->
-<footer class="main-footer dt-sl position-relative">
+<footer class="main-footer dt-sl position-relative mb-4 pb-5 mb-lg-0 pb-lg-0">
     <div class="back-to-top">
         <a href="#"><span class="icon"><i class="mdi mdi-chevron-up"></i></span> <span>بازگشت به
                 بالا</span></a>

@@ -54,7 +54,7 @@
         @if ($product->category)
             <a class="product-meta"
                 href="{{ route('front.products.category', ['category' => $product->category]) }}">{{ $product->category->title }}</a>
-            <small>مدل : {{ $product->car_model ?? '--' }}</small><br>
+            <small>مدل : {{ $product->car_model?? '--' }}</small><br>
             <small>کارکرد : {{ $product->mileage?? '--' }}</small><br>
             <small>سال ساخت : {{ $buildYear ?? '--' }}</small>
             @endif

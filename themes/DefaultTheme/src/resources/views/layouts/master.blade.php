@@ -26,7 +26,7 @@
     </title>
 
     <!-- Font Icon -->
-	
+
 	<link rel="stylesheet" href="{{ theme_asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ theme_asset('css/vendor/materialdesignicons.min.css') }}">
 
@@ -70,16 +70,17 @@
 
 
 <body>
-	
+
     <div class="wrapper @yield('wrapper-classes')">
 
 
         <!-- Start header -->
-        <header class="main-header dt-sl">
+        <!-- Start header -->
+        <header class="main-header dt-sl py-3 py-lg-0 w-100">
 
             <!-- Start topbar -->
             <div class="container main-container">
-                <div class="topbar dt-sl">
+                <div class="topbar dt-sl d-none d-lg-block">
                     <div class="row">
                         <div class="col-lg-2 col-md-3 col-6 the_logo_height">
                             <div class="logo-area float-right w-100 h-100 d-flex align-items-center justify-content-start my-0">
@@ -89,11 +90,11 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-5 d-none d-md-block">
+                        <div class="col-lg-6 col-md-5 d-none d-md-flex align-items-start">
                             <div class="search-area dt-sl">
                                 <form id="search-form" action="{{ route('front.products.search') }}" class="search">
                                     <input type="text" name="q" value="{{ request('q') }}" id="search-input"
-                                        autocomplete="off" placeholder="نام کالای یا دسته بندی مورد نظر خود را جستجو کنید…">
+                                        autocomplete="off" placeholder="نام کالای مورد نظر خود را جستجو کنید…">
                                     <button type="submit"><img data-src="{{ theme_asset('img/theme/search.png') }}"
                                             alt="search button"></button>
                                     <button id="close-search-result" class="close-search-result" type="button"><i
@@ -130,7 +131,45 @@
         @yield('content')
 
         @include('front::partials.footer')
+    <div id="menu-bar" class="mobile-footer-scroller ">
+        <nav class=" mobile-footer-scroller-inner">
+            <ul class="mobile-footer-scroller-inner-list">
+                <li>
+                    <a class="mobile-footer-scroller-inner-list-item active" href="#">
+                        <i class="ri-price-tag-3-fill"></i>
+                        <span class="text-sm">
+                            فروش خودرو
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="mobile-footer-scroller-inner-list-item" href="#">
+                        <i class="ri-history-line"></i>
+                        <span class="text-sm">
+                            قیمت روز خودرو
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="mobile-footer-scroller-inner-list-item" href="#">
+                        <i class="ri-money-dollar-circle-line"></i>
+                        <span class="text-sm">
+                            تخمین قیمت
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="mobile-footer-scroller-inner-list-item" href="#">
+                        <i class="ri-roadster-line"></i>
+                        <span class="text-sm">
+                            خرید خودرو
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
+	</div>
 
     <script>
         var BASE_URL = "{{ route('front.index') }}";
@@ -145,7 +184,7 @@
         <script src="{{ theme_asset('js/vendor/owl.carousel.min.js') }}"></script>
         <script src="{{ theme_asset('js/vendor/jquery.horizontalmenu.js') }}"></script>
         <script src="{{ theme_asset('js/vendor/theia-sticky-sidebar.min.js') }}"></script>
-      <script src="{{ theme_asset('js/vendor/jquery.lazyloadxt.min.js') }}"></script> 
+      <script src="{{ theme_asset('js/vendor/jquery.lazyloadxt.min.js') }}"></script>
 
         <script src="{{ theme_asset('js/plugins/jquery.blockUI.js') }}"></script>
         <script src="{{ theme_asset('js/plugins/sweetalert2.all.min.js') }}"></script>
@@ -221,7 +260,7 @@
             });
         </script>
 
-        
+
     @else
         <!-- All JS Files -->
      <script src="{{ mix('js/all.js', config('front.mainfest_path')) }}"></script>

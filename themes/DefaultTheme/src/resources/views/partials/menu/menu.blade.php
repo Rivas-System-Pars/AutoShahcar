@@ -8,9 +8,14 @@
 	
 	 @include('front::partials.mobile-menu.menu')
 	
-<ul class="nav float-left nav_direction p-0 col-11 card_direction col-lg-2">
-        @include('front::partials.cart')
- </ul>
+    <ul class="nav float-left nav_direction p-0 col-11 card_direction col-lg-2">
+      <div class="topbar-left d-flex alig-item-center justify-content-end flex-row w-100">
+                @include('front::partials.cart')
+			<div class="d-lg-none">
+				@include('front::partials.user-menu')
+            </div>
+		</div>
+    </ul>
 
 
    
