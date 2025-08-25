@@ -113,10 +113,10 @@ class Price extends Model
 
         if ($create_change) {
             $this->changes()->create([
-                'product_id'     => $this->product_id,
-                'price'          => $new_price,
-                'discount'       => $new_discount,
-                'is_available'   => $new_stock > 0
+                'product_id' => $this->product_id,
+                'price' => $new_price,
+                'discount' => $new_discount,
+                'is_available' => $new_stock > 0
             ]);
         }
     }
@@ -127,11 +127,11 @@ class Price extends Model
         $file->storeAs('product-files', $filename, 'downloads');
 
         $this->file()->create([
-            'title'    => $title,
-            'file'     => $filename,
-            'disk'     => 'downloads',
-            'size'     => $file->getSize(),
-            'status'   => $status,
+            'title' => $title,
+            'file' => $filename,
+            'disk' => 'downloads',
+            'size' => $file->getSize(),
+            'status' => $status,
         ]);
     }
 
@@ -143,15 +143,15 @@ class Price extends Model
             $size = $file->getSize();
         } else {
             $filename = $this->file->file;
-            $size     = $this->file->size;
+            $size = $this->file->size;
         }
 
         $this->file()->update([
-            'title'    => $title,
-            'file'     => $filename,
-            'disk'     => 'downloads',
-            'size'     => $size,
-            'status'   => $status,
+            'title' => $title,
+            'file' => $filename,
+            'disk' => 'downloads',
+            'size' => $size,
+            'status' => $status,
         ]);
     }
 
@@ -159,7 +159,7 @@ class Price extends Model
     {
         if ($this->product->isDownload()) {
             return [
-                'status'  => true,
+                'status' => true,
                 'message' => 'ok'
             ];
         }
@@ -167,13 +167,13 @@ class Price extends Model
         if ($this->cart_min !== null && $this->cart_min > $quantity && $this->stock > $quantity) {
             if ($with_attributes) {
                 return [
-                    'status'  => false,
+                    'status' => false,
                     'message' => 'حداقل تعداد برای خودرو "' . $this->product->title . '"' . $this->getAttributesName() . ' "' . $this->cart_min . '" میباشد'
                 ];
             }
 
             return [
-                'status'  => false,
+                'status' => false,
                 'message' => 'لطفا تعداد بیشتر از یا مساوی ' . $this->cart_min . ' انتخاب کنید.'
             ];
         }
@@ -181,19 +181,19 @@ class Price extends Model
         if ($this->stock < $quantity || ($this->cart_max !== null && $this->cart_max < $quantity)) {
             if ($with_attributes) {
                 return [
-                    'status'  => false,
+                    'status' => false,
                     'message' => 'موجودی خودرو "' . $this->product->title . ' ' . $this->getAttributesName() . '" کافی نیست.'
                 ];
             }
 
             return [
-                'status'  => false,
+                'status' => false,
                 'message' => 'موجودی خودرو کافی نمی باشد'
             ];
         }
 
         return [
-            'status'  => true,
+            'status' => true,
             'message' => 'ok'
         ];
     }
@@ -250,5 +250,11 @@ class Price extends Model
     public function scopeInStock($query)
     {
         return $query->where('stock', '>', 0);
+    }
+
+    public function attributes()
+    {
+        // pivot: attribute_price (attribute_id, price_id)
+        return $this->belongsToMany(\App\Models\Attribute::class, 'attribute_price', 'price_id', 'attribute_id');
     }
 }

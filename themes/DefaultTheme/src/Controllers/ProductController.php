@@ -74,39 +74,39 @@ class ProductController extends Controller
 
 
 
- public function search(Request $request)
-{
-    $term = trim((string) $request->q);
-    $categoryId = $request->category_id;
+    public function search(Request $request)
+    {
+        $term = trim((string) $request->q);
+        $categoryId = $request->category_id;
 
-    // دسته‌های مرتبط (فقط 12 تا برای نمایش بالای نتایج)
-    $categories = Category::query()
-        ->when($categoryId, fn($q) => $q->where('id', $categoryId))
-        ->when($term !== '', fn($q) => $q->where('title', 'like', "%{$term}%"))
-        ->latest()
-        ->take(12)
-        ->get();
+        // دسته‌های مرتبط (فقط 12 تا برای نمایش بالای نتایج)
+        $categories = Category::query()
+            ->when($categoryId, fn($q) => $q->where('id', $categoryId))
+            ->when($term !== '', fn($q) => $q->where('title', 'like', "%{$term}%"))
+            ->latest()
+            ->take(12)
+            ->get();
 
-    // محصولات (با فیلتر دسته و عبارت جستجو)
-    $products = Product::query()
-        ->when($categoryId, function ($q) use ($categoryId) {
-            $q->where('category_id', $categoryId)
-              ->orWhereHas('categories', fn($c) => $c->where('categories.id', $categoryId));
-        })
-        ->when($term !== '', function ($q) use ($term) {
-            $q->where(function ($qq) use ($term) {
-                $qq->where('title', 'like', "%{$term}%")
-                   ->orWhereHas('category', fn($c) => $c->where('title', 'like', "%{$term}%"))
-                   ->orWhereHas('categories', fn($c) => $c->where('title', 'like', "%{$term}%"));
-            });
-        })
-        ->published() // اگه داری
-        ->latest()
-        ->paginate(20)
-        ->withQueryString();
+        // محصولات (با فیلتر دسته و عبارت جستجو)
+        $products = Product::query()
+            ->when($categoryId, function ($q) use ($categoryId) {
+                $q->where('category_id', $categoryId)
+                    ->orWhereHas('categories', fn($c) => $c->where('categories.id', $categoryId));
+            })
+            ->when($term !== '', function ($q) use ($term) {
+                $q->where(function ($qq) use ($term) {
+                    $qq->where('title', 'like', "%{$term}%")
+                        ->orWhereHas('category', fn($c) => $c->where('title', 'like', "%{$term}%"))
+                        ->orWhereHas('categories', fn($c) => $c->where('title', 'like', "%{$term}%"));
+                });
+            })
+            ->published() // اگه داری
+            ->latest()
+            ->paginate(20)
+            ->withQueryString();
 
-    return view('front::products.search', compact('products', 'categories'));
-}
+        return view('front::products.search', compact('products', 'categories'));
+    }
 
 
     public function specials()
@@ -130,81 +130,81 @@ class ProductController extends Controller
         return view('front::products.discounts', compact('products'));
     }
 
-   public function ajax_search(Request $request)
-{
-    $term = trim((string) $request->input('q', ''));
+    public function ajax_search(Request $request)
+    {
+        $term = trim((string) $request->input('q', ''));
 
-    // دسته‌ها
-    $categories = Category::query()
-        ->when($request->filled('category_id'), function ($q) use ($request) {
-            $q->where('id', $request->category_id);
-        })
-        ->when($term !== '', function ($q) use ($term) {
-            $q->where('title', 'like', "%{$term}%");
-        })
-        ->latest()
-        ->take(10)
-        ->get();
+        // دسته‌ها
+        $categories = Category::query()
+            ->when($request->filled('category_id'), function ($q) use ($request) {
+                $q->where('id', $request->category_id);
+            })
+            ->when($term !== '', function ($q) use ($term) {
+                $q->where('title', 'like', "%{$term}%");
+            })
+            ->latest()
+            ->take(10)
+            ->get();
 
-    // محصولات
-    $products = Product::query()
-        ->with(['category', 'categories'])
-        ->when($request->filled('category_id'), function ($q) use ($request) {
-            $q->where(function ($qq) use ($request) {
-                $qq->where('category_id', $request->category_id)
-                   ->orWhereHas('categories', function ($c) use ($request) {
-                       $c->where('categories.id', $request->category_id);
-                   });
-            });
-        })
-        ->when($term !== '', function ($q) use ($term) {
-            $q->where(function ($qq) use ($term) {
-                $qq->where('title', 'like', "%{$term}%")
-                   ->orWhere('slug', 'like', "%{$term}%")
-                   ->orWhereHas('category', fn ($c) => $c->where('title', 'like', "%{$term}%"))
-                   ->orWhereHas('categories', fn ($c) => $c->where('title', 'like', "%{$term}%"));
-            });
-        })
-        ->published() // اگه اسکوپ داری
-        ->latest()
-        ->take(10)
-        ->get();
+        // محصولات
+        $products = Product::query()
+            ->with(['category', 'categories'])
+            ->when($request->filled('category_id'), function ($q) use ($request) {
+                $q->where(function ($qq) use ($request) {
+                    $qq->where('category_id', $request->category_id)
+                        ->orWhereHas('categories', function ($c) use ($request) {
+                            $c->where('categories.id', $request->category_id);
+                        });
+                });
+            })
+            ->when($term !== '', function ($q) use ($term) {
+                $q->where(function ($qq) use ($term) {
+                    $qq->where('title', 'like', "%{$term}%")
+                        ->orWhere('slug', 'like', "%{$term}%")
+                        ->orWhereHas('category', fn($c) => $c->where('title', 'like', "%{$term}%"))
+                        ->orWhereHas('categories', fn($c) => $c->where('title', 'like', "%{$term}%"));
+                });
+            })
+            ->published() // اگه اسکوپ داری
+            ->latest()
+            ->take(10)
+            ->get();
 
-    // خروجی ایجکس
-    $results = [];
+        // خروجی ایجکس
+        $results = [];
 
-    foreach ($categories as $cat) {
-        $results[] = [
-            'type'     => 'category',
-            'title'    => $cat->title,
-            'link'     => route('front.products.category', $cat->slug),
-            'image'      => $cat->image ? asset($cat->image) : asset('uploads/1741160562_icon.png'),
-            'category' => 'دسته‌بندی',
-            'price'    => '',
-        ];
+        foreach ($categories as $cat) {
+            $results[] = [
+                'type' => 'category',
+                'title' => $cat->title,
+                'link' => route('front.products.category', $cat->slug),
+                'image' => $cat->image ? asset($cat->image) : asset('uploads/1741160562_icon.png'),
+                'category' => 'دسته‌بندی',
+                'price' => '',
+            ];
+        }
+
+        foreach ($products as $product) {
+            $catTitle = optional($product->category)->title
+                ?? optional($product->categories->first())->title
+                ?? 'دسته‌بندی';
+
+            $lowest = method_exists($product, 'getLowestPrice') ? $product->getLowestPrice(true) : null;
+
+            $results[] = [
+                'type' => 'product',
+                'title' => $product->title,
+                'link' => route('front.products.show', $product->slug),
+                'image' => method_exists($product, 'imageUrl')
+                    ? $product->imageUrl(asset('/no-image-product.png'))
+                    : ($product->image ? asset($product->image) : asset('/no-image-product.png')),
+                'category' => 'خودرو',
+                'price' => $lowest ? number_format($lowest) . ' تومان' : '',
+            ];
+        }
+
+        return response()->json($results);
     }
-
-    foreach ($products as $product) {
-        $catTitle = optional($product->category)->title
-            ?? optional($product->categories->first())->title
-            ?? 'دسته‌بندی';
-
-        $lowest = method_exists($product, 'getLowestPrice') ? $product->getLowestPrice(true) : null;
-
-        $results[] = [
-            'type'     => 'product',
-            'title'    => $product->title,
-            'link'     => route('front.products.show', $product->slug),
-            'image'    => method_exists($product, 'imageUrl')
-                            ? $product->imageUrl(asset('/no-image-product.png'))
-                            : ($product->image ? asset($product->image) : asset('/no-image-product.png')),
-            'category' => 'خودرو',
-            'price'    => $lowest ? number_format($lowest) . ' تومان' : '',
-        ];
-    }
-
-    return response()->json($results);
-}
 
     public function show(Product $product)
     {
@@ -229,9 +229,12 @@ class ProductController extends Controller
                 ->get();
         }
 
-        $product->load(['creator','comments' => function ($query) {
-            $query->whereNull('comment_id')->where('status', 'accepted')->latest();
-        }]);
+        $product->load([
+            'creator',
+            'comments' => function ($query) {
+                $query->whereNull('comment_id')->where('status', 'accepted')->latest();
+            }
+        ]);
 
         $selected_price = $product->getPrices()->first();
 
@@ -246,44 +249,44 @@ class ProductController extends Controller
         $show_prices_chart = option('dt_show_price_change_chart', 'yes') == 'yes';
 
         $product->increaseViewCount();
-		
-		
-if (auth()->check()) {
-    $user = auth()->user();
-    $role = $user->roles()->first() == null ? $user->level : $user->roles()->first()->slug;
 
-    switch ($role) {
-        case 'creator':
-            $is_creator = true;
-            $is_admin = false;
-            $is_auto = false;
-            $is_user = false;
-            break;
-        case 'ادمین':
-            $is_creator = false;
-            $is_admin = true;
-            $is_auto = false;
-            $is_user = false;
-            break;
-        case 'نمایشگاه-دار':
-            $is_creator = false;
-            $is_admin = false;
-            $is_auto = true;
-            $is_user = false;
-            break;
-        default:
+
+        if (auth()->check()) {
+            $user = auth()->user();
+            $role = $user->roles()->first() == null ? $user->level : $user->roles()->first()->slug;
+
+            switch ($role) {
+                case 'creator':
+                    $is_creator = true;
+                    $is_admin = false;
+                    $is_auto = false;
+                    $is_user = false;
+                    break;
+                case 'ادمین':
+                    $is_creator = false;
+                    $is_admin = true;
+                    $is_auto = false;
+                    $is_user = false;
+                    break;
+                case 'نمایشگاه-دار':
+                    $is_creator = false;
+                    $is_admin = false;
+                    $is_auto = true;
+                    $is_user = false;
+                    break;
+                default:
+                    $is_creator = false;
+                    $is_admin = false;
+                    $is_auto = false;
+                    $is_user = true;
+                    break;
+            }
+        } else {
             $is_creator = false;
             $is_admin = false;
             $is_auto = false;
             $is_user = true;
-            break;
-    }
-} else {
-    $is_creator = false;
-            $is_admin = false;
-            $is_auto = false;
-            $is_user = true;
-}
+        }
 
 
 
@@ -295,10 +298,10 @@ if (auth()->check()) {
             'similar_products_count',
             'selected_price',
             'show_prices_chart',
-			'is_creator',
-			'is_admin',
-			'is_auto',
-			'is_user'
+            'is_creator',
+            'is_admin',
+            'is_auto',
+            'is_user'
         ));
     }
 

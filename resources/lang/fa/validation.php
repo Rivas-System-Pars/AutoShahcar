@@ -198,6 +198,9 @@ return [
         'subject'               => "موضوع",
         'message'               => "پیام",
         'gateway_payir_api'     => 'api کد pay.ir',
+        'carage'                =>  'سال تولید',
+        'mileage'                =>  'کارکرد',
+        'car_model'                =>  'مدل ماشین',
 
 
         'gateway_mellat_username'     => 'نام کاربری درگاه ملت',

@@ -140,6 +140,35 @@
                                                                             value="{{ $copy_product && $copy_product->brand ? $copy_product->brand->name : '' }}">
                                                                     </div>
                                                                 </div>
+
+                                                                <div class="col-md-3 col-12">
+                                                                    <div class="form-group">
+                                                                        <label>مدل</label>
+                                                                        <input id="car_model" type="text"
+                                                                            class="form-control" name="car_model"
+                                                                            value="{{ $copy_product ? $copy_product->car_model : '' }}">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-3 col-12">
+                                                                    <div class="form-group">
+                                                                        <label>کار کرد</label>
+                                                                        <input id="mileage" type="text"
+                                                                            class="form-control" name="mileage"
+                                                                            value="{{ $copy_product ? $copy_product->mileage : '' }}">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-3 col-12">
+                                                                    <div class="form-group">
+                                                                        <label>سال</label>
+                                                                        <input id="carage" type="text"
+                                                                            class="form-control" name="carage"
+                                                                            value="{{ $copy_product ? $copy_product->carage : '' }}">
+                                                                    </div>
+                                                                </div>
+
+
                                                                 <div class="col-md-3 col-12 physical-item">
                                                                     <div class="form-group">
                                                                         <label>واحد</label>
@@ -205,6 +234,7 @@
                                                                         <textarea class="form-control" name="short_description" rows="3">{{ $copy_product ? $copy_product->short_description : '' }}</textarea>
                                                                     </div>
                                                                 </div>
+
 
                                                                 <div class="col-md-12">
                                                                     <div class="form-group">

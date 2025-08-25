@@ -199,6 +199,26 @@
                                                                     </fieldset>
                                                                 </div>
 
+                                                                <div class="col-md-3 col-12">
+                                                                    <div class="form-group">
+                                                                        <label>مدل</label>
+                                                                        <input id="car_model" type="text"
+                                                                            class="form-control" name="car_model"
+                                                                            value="{{ $product->car_model }}">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-3 col-12">
+                                                                    <div class="form-group">
+                                                                        <label>کار کرد</label>
+                                                                        <input id="mileage" type="text"
+                                                                            class="form-control" name="mileage"
+                                                                            value="{{ $product->mileage }}">
+                                                                    </div>
+                                                                </div>
+
+
+
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label>توضیحات کوتاه</label>

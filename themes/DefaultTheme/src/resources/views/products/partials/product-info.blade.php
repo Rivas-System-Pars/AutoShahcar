@@ -47,6 +47,7 @@
                 @endif
 
 
+
                 @php
                     $specialSpecifications = $product->specialSpecifications();
                 @endphp
@@ -222,7 +223,7 @@
         <div class="dt-sl mt-4">
  --}}
 
-            
+
             @if ($product->category_id != 12)
                 <a href="tel:{{ App\Models\User::find($product->user_creator)->username }}">
                     <button id="stock_notify_btn" type="button" class="btn-primary-cm bg-secondary btn-with-icon ">
@@ -232,9 +233,9 @@
 
                 </a>
             @else
-                
 
-                
+
+
             @endif
         </div>
     </div>
@@ -438,9 +439,9 @@
 
 
         <div class="dt-sl mt-4">
-           
 
-            
+
+
             @if ($product->category_id != 12)
                 <a href="tel:{{ App\Models\User::find($product->user_creator)->username }}">
                     <button id="stock_notify_btn" type="button" class="btn-primary-cm bg-secondary btn-with-icon ">
@@ -450,9 +451,9 @@
 
                 </a>
             @else
-                
 
-                
+
+
             @endif
         </div>
     </div>
@@ -656,9 +657,9 @@
 
 
         <div class="dt-sl mt-4">
-            
 
-            
+
+
             @if ($product->category_id != 12)
                 <a href="tel:{{ App\Models\User::find($product->user_creator)->username }}">
                     <button id="stock_notify_btn" type="button" class="btn-primary-cm bg-secondary btn-with-icon ">
@@ -700,7 +701,7 @@
         <div class="product-title">
             <h1>{{ $product->title }}</h1>
             <h3>{{ $product->title_en }}</h3>
-            
+
         </div>
 
         <div class="row pt-4">
@@ -882,9 +883,9 @@
 
 
         <div class="dt-sl mt-4">
-            
 
-            
+
+
             @if ($product->category_id != 12)
                 <a href="tel:+989999927595">
                     <button id="stock_notify_btn" type="button" class="btn-primary-cm bg-secondary btn-with-icon ">

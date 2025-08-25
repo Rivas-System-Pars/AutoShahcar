@@ -36,6 +36,8 @@ class UpdateProductRequest extends FormRequest
             'categories'       => 'nullable|array',
             'categories.*'     => 'exists:categories,id',
             'type'             => 'required|in:physical,download',
+            'car_model'        =>'required|string|max:191',
+            'mileage'          =>'required|integer',
             'rounding_amount'  => 'required|in:default,no,100,1000,10000,100000',
             'rounding_type'    => 'required|in:default,close,up,down',
             'currency_id'      => 'nullable|exists:currencies,id',

@@ -12,15 +12,17 @@
     <link rel="stylesheet" href="{{ theme_asset('css/vendor/nouislider.min.css') }}">
 @endpush
 
-
+@php
+    $has_filter = $category->getFilter();
+@endphp
 
 @section('content')
-
     <!-- Start main-content -->
     <main class="main-content dt-sl mt-4 mb-3">
         <div class="container main-container">
 
             <div class="row">
+
                 <!-- Start Content -->
                 <div class="title-breadcrumb-special dt-sl mb-3">
                     <div class="breadcrumb dt-sl">
@@ -36,28 +38,39 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
-    @if($products->count())
-        <div class="row mb-3 mx-0 px-res-0">
-            @foreach($products as $product)
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-10 mb-1 px-res-0 category-product-div">
-                    @include('front::products.partials.product-card', ['product' => $product])
-                </div>
-            @endforeach
-        </div>
+                @if ($has_filter)
+                    @include('front::products.partials.category-filters')
+                @endif
 
-        {{ $products->appends(request()->all())->links('front::components.paginate') }}
-    @else
-        @include('front::partials.empty')
-    @endif
-</div>
+                <div id="category-products-div" data-action="{{ route('front.products.category-products', ['category' => $category]) }}" class="{{ $category->getFilter() ? 'col-lg-9' : 'col-lg-12' }} col-md-12 col-sm-12">
+                @if($products->count())
+                    <div class="row mb-3 mx-0 px-res-0">
+                        @foreach($products as $product)
+                            @php
+                                // Fallback: اگر تصویر محصول خالی بود، از تصویر دسته‌بندی استفاده کن
+                                if (blank($product->image)) {
+                                    $product->image = optional($product->category)->image ?: 'images/no-image.png';
+                                }
+                            @endphp
 
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-10 mb-1 px-res-0 category-product-div">
+                                @include('front::products.partials.product-card', ['product' => $product])
+                            </div>
+                        @endforeach
+                    </div>
+
+                    {{ $products->appends(request()->all())->links('front::components.paginate') }}
+                @else
+                    @include('front::partials.empty')
+                @endif
+            </div>
 
             @if ($category->description)
                 <div class="row mt-2">
                     <div class="dt-sl dt-sn search-amazing-tab mb-3 mx-3" >
                         <div class="row">
-
                             <div class="col-md-12 p-md-5 category-background" style="background-image: url({{ asset($category->background_image) }});">
                                 {!! $category->description !!}
                             </div>
@@ -72,7 +85,6 @@
 @endsection
 
 @push('scripts')
-
     <script>
         var selected_min_price = {{ request('min_price') ?: $min_price }};
         var selected_max_price = {{ request('max_price') ?: $max_price }};

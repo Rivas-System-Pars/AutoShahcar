@@ -59,8 +59,8 @@ class ThemeServiceProvider extends ServiceProvider
 
         view()->composer(['front::partials.footer'], function ($view) {
 
-            $footer_links     = config('front.linkGroups', []);
-            $links            = Link::orderBy('ordering')->get();
+            $footer_links = config('front.linkGroups', []);
+            $links = Link::orderBy('ordering')->get();
 
             $view->with(compact('footer_links', 'links'));
         });
@@ -75,8 +75,8 @@ class ThemeServiceProvider extends ServiceProvider
                     ->getWithChilds();
             });
 
-            $postcats    = Category::published()->where('type', 'postcat')->whereNull('category_id')->orderBy('ordering')->get();
-            $menus       = Menu::whereNull('menu_id')->orderBy('ordering')->get();
+            $postcats = Category::published()->where('type', 'postcat')->whereNull('category_id')->orderBy('ordering')->get();
+            $menus = Menu::whereNull('menu_id')->orderBy('ordering')->get();
 
             $view->with(compact('productcats', 'postcats', 'menus'));
         });
@@ -99,6 +99,18 @@ class ThemeServiceProvider extends ServiceProvider
 
             $view->with(compact('user', 'random_products'));
         });
+        view()->composer(['front::products.show'], function ($view) {
+
+            $user = auth()->user();
+            $random_products = Product::where('published', true)
+                ->available()
+                ->inRandomOrder()
+                ->limit(10)
+                ->get();
+
+            $view->with(compact('user', 'random_products'));
+        });
+
 
         view()->composer(['front::partials.cart', 'front::partials.checkout-sidebar', 'front::checkout', 'front::cart'], function ($view) {
             $cart = get_cart();

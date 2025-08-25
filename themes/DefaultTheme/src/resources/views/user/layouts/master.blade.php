@@ -105,14 +105,14 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <!-- End Sidebar -->
 
                 @yield('user-content')
 
             </div>
-
-            {{-- @if($random_products->count())
+            @if(auth()->check() && (auth()->user()->level === 'admin' || auth()->user()->level === 'creator'))            @if($random_products->count())
                 <section class="slider-section dt-sl mt-5 mb-5">
                     <div class="row mb-3">
                         <div class="col-12">
@@ -133,7 +133,8 @@
 
                     </div>
                 </section>
-            @endif --}}
+            @endif
+         @endif
 
         </div>
     </main>

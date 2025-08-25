@@ -46,7 +46,7 @@ class Product extends Model
 
     public function gifts(): HasMany
     {
-        return $this->hasMany(ProductGift::class,'product_id');
+        return $this->hasMany(ProductGift::class, 'product_id');
     }
 
     public function category()
@@ -165,7 +165,7 @@ class Product extends Model
         return $this->morphToMany(Label::class, 'labelable')->withTimestamps();
     }
 
-	public function ratings()
+    public function ratings()
     {
         return $this->hasMany(Rating::class);
     }
@@ -176,7 +176,7 @@ class Product extends Model
     }
     //------------- end relations
 
-	public function averageRating()
+    public function averageRating()
     {
         return $this->ratings()->avg('rating'); // میانگین امتیازها
     }
@@ -265,9 +265,9 @@ class Product extends Model
 
         if ($price && $price->stock) {
             return $numeric ? $price->discountPrice() : number_format($price->discountPrice()) . ' تومان';
-        }else if($this->isDownload() && $price){
-			return $numeric ? $price->discountPrice() : number_format($price->discountPrice()) . ' تومان';
-		}
+        } else if ($this->isDownload() && $price) {
+            return $numeric ? $price->discountPrice() : number_format($price->discountPrice()) . ' تومان';
+        }
 
         return $numeric ? null : 'ناموجود';
     }
@@ -397,5 +397,16 @@ class Product extends Model
     public function isSinglePrice()
     {
         return $this->getPrices()->count() == 1;
+    }
+
+    public function allAttributes()
+    {
+        return $this->prices()
+            ->with('attributes.group')
+            ->get()
+            ->pluck('attributes')
+            ->flatten()
+            ->unique('id')
+            ->values();
     }
 }

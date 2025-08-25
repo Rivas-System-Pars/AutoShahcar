@@ -10,7 +10,7 @@
 
 @section('content')
 
-{{-- @php
+    {{-- @php
 
     dd($product->category_id == 12);
 @endphp --}}
@@ -25,13 +25,13 @@
                         <a href="{{ route('front.index') }}">خانه</a>
                         <a href="{{ route('front.products.index') }}">خودروها</a>
                         @if ($product->category)
-
                             @foreach ($product->category->parents() as $parent)
-                                <a href="{{ route('front.products.category', ['category' => $parent]) }}">{{ $parent->title }}</a>
+                                <a
+                                    href="{{ route('front.products.category', ['category' => $parent]) }}">{{ $parent->title }}</a>
                             @endforeach
 
-                            <a href="{{ route('front.products.category', ['category' => $product->category]) }}">{{ $product->category->title }}</a>
-
+                            <a
+                                href="{{ route('front.products.category', ['category' => $product->category]) }}">{{ $product->category->title }}</a>
                         @endif
                         <span>{{ $product->title }}</span>
                     </nav>
@@ -45,7 +45,7 @@
                     <!-- Product Gallery-->
                     <div class="col-lg-4 col-md-6 pb-5 ps-relative">
 
-                        @if(!$product->addableToCart())
+                        @if (!$product->addableToCart())
                             <div class="product-timeout position-relative pt-5 mb-3">
                                 <div class="promotion-badge not-available">
                                     ناموجود
@@ -92,42 +92,36 @@
 
                         </ul>
 
-@php
-    $authUser = auth()->user();
+                        @php
+    use Illuminate\Support\Str;
+
+    // 1) اول خودِ تصویر محصول
+    $img = $product->image;
+
+    // 2) اگه خالی بود و گالری‌ای داری، اولین عکس گالری
+    if (blank($img) && isset($product->galleryItems) && $product->galleryItems->count()) {
+        $img = $product->galleryItems->first()->image ?? null;
+    }
+
+    // 3) اگه هنوز خالی بود، عکس دسته‌بندی
+    if (blank($img)) {
+        $img = optional($product->category)->image;
+    }
+
+    // 4) آخرینFallback
+    if (blank($img)) {
+        $img = 'images/no-image.png';
+    }
+
+    // اگر URL کامل نبود، asset() کن
+    $imgUrl = Str::startsWith($img, ['http://','https://','//']) ? $img : asset($img);
 @endphp
 
-@if ($authUser && in_array($authUser->level, ['admin', 'creator'], true))
-    @php
-        $galleryItems = $product->gallery()->orderBy('ordering')->get();
-    @endphp
-
-    @if ($galleryItems->count())
-        <div class="product-gallery">
-            <div class="product-carousel owl-carousel">
-                @foreach ($galleryItems as $index => $item)
-                    <div class="item">
-                        <a class="gallery-item"
-                           href="{{ asset($item->image) }}"
-                           data-fancybox="gallery"
-                           data-owl="one{{ $index }}">
-                            <img loading="lazy" data-src="{{ asset($item->image) }}" alt="{{ $product->title }}">
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-
-            <ul class="product-thumbnails">
-                @foreach ($galleryItems as $index => $item)
-                    <li class="{{ $loop->first ? 'active' : '' }}">
-                        <a href="#one{{ $index }}" class="owl-thumbnail" data-slide="{{ $index }}">
-                            <img loading="lazy" data-src="{{ asset($item->image) }}" alt="{{ $product->title }}">
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-@endif
+<a class="product-thumb" href="{{ route('front.products.show', $product->slug) }}">
+    <img style="width:auto;height:220px;object-fit:contain;overflow:hidden;border-radius:0.75rem;flex-shrink:0;"
+         src="{{ $imgUrl }}"
+         alt="{{ $product->title }}">
+</a>
 
 
                     </div>
@@ -141,18 +135,22 @@
                     <div class="ah-tab-wrapper dt-sl">
                         <div class="ah-tab dt-sl">
                             @if ($product->isDownload())
-                                <a class="ah-tab-item" href="javascript:void(0)"><i class="mdi mdi-download"></i>فایل های خودرو</a>
+                                <a class="ah-tab-item" href="javascript:void(0)"><i class="mdi mdi-download"></i>فایل های
+                                    خودرو</a>
                             @endif
 
                             @if ($product->description)
-                                <a class="ah-tab-item" href="javascript:void(0)"><i class="mdi mdi-glasses"></i>مشخصات کلی</a>
+                                <a class="ah-tab-item" href="javascript:void(0)"><i class="mdi mdi-glasses"></i>مشخصات
+                                    کلی</a>
                             @endif
 
                             @if ($product->specificationGroups()->count())
-                                <a class="ah-tab-item" href="javascript:void(0)"><i class="mdi mdi-format-list-checks"></i>مشخصات فنی</a>
+                                <a class="ah-tab-item" href="javascript:void(0)"><i
+                                        class="mdi mdi-format-list-checks"></i>مشخصات فنی</a>
                             @endif
 
-                            <a class="ah-tab-item" href="javascript:void(0)"><i class="mdi mdi-comment-question-outline"></i>دیدگاه و پرسش و پاسخ</a>
+                            <a class="ah-tab-item" href="javascript:void(0)"><i
+                                    class="mdi mdi-comment-question-outline"></i>دیدگاه و پرسش و پاسخ</a>
                         </div>
                     </div>
                     <div class="ah-tab-content-wrapper product-info px-4 dt-sl">
@@ -179,19 +177,19 @@
                                 <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 dt-sl">
                                     <h2>مشخصات فنی</h2>
                                 </div>
-                                @foreach($product->specificationGroups->unique() as $group)
+                                @foreach ($product->specificationGroups->unique() as $group)
                                     <section>
                                         <h3 class="params-title">{{ $group->name }}</h3>
                                         <ul class="params-list">
-                                            @foreach($product->specifications()->where('specification_group_id', $group->id)->get() as $specification)
+                                            @foreach ($product->specifications()->where('specification_group_id', $group->id)->get() as $specification)
                                                 <li>
                                                     <div class="params-list-key">
                                                         <span class="d-block">{{ $specification->name }}</span>
                                                     </div>
                                                     <div class="params-list-value">
-                                                            <span class="d-block">
-                                                                {!! nl2br(htmlentities($specification->pivot->value)) !!}
-                                                            </span>
+                                                        <span class="d-block">
+                                                            {!! nl2br(htmlentities($specification->pivot->value)) !!}
+                                                        </span>
                                                     </div>
 
                                                 </li>
@@ -203,7 +201,11 @@
                         @endif
 
                         <div class="ah-tab-content dt-sl">
-                            @include('front::components.comments', ['model' => $product, 'route_link' => route('front.product.comments', ['product' => $product]), 'message' => 'هیچ دیدگاهی برای این خودرو ثبت نشده است.' ])
+                            @include('front::components.comments', [
+                                'model' => $product,
+                                'route_link' => route('front.product.comments', ['product' => $product]),
+                                'message' => 'هیچ دیدگاهی برای این خودرو ثبت نشده است.',
+                            ])
 
                         </div>
                     </div>
@@ -212,51 +214,48 @@
             </div>
             <!-- End Product -->
 
-           {{-- @if($related_products->count())
-<!-- Start Product-Slider -->
-<section class="slider-section dt-sl mb-5">
-    <div class="row mb-3">
-        <div class="col-12">
-            <div class="section-title text-sm-title title-wide no-after-title-wide">
-                <h2>خودروها مرتبط</h2>
-            </div>
-        </div>
+            @if (auth()->check() && (auth()->user()->level === 'admin' || auth()->user()->level === 'creator'))
+                @if ($random_products->count())
+                    <section class="slider-section dt-sl mt-5 mb-5">
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <div class="section-title text-sm-title title-wide no-after-title-wide">
+                                    <h2>محصولات پیشنهادی برای شما</h2>
+                                </div>
+                            </div>
 
-        <!-- Start Product-Slider -->
-        <div class="col-12">
-            <div class="product-carousel carousel-lg owl-carousel owl-theme">
-                @foreach ($related_products as $related_product)
-                    @include('front::partials.product-block', ['product' => $related_product])
-                @endforeach
-            </div>
+                            <!-- Start Product-Slider -->
+                            <div class="col-12 px-res-0">
+                                <div class="product-carousel carousel-md owl-carousel owl-theme">
+                                    @foreach ($random_products as $product)
+                                        @include('front::partials.product-block')
+                                    @endforeach
+                                </div>
+                            </div>
+                            <!-- End Product-Slider -->
 
-        </div>
-        <!-- End Product-Slider -->
-
-    </div>
-</section>
-<!-- End Product-Slider -->
-@endif --}}
+                        </div>
+                    </section>
+                @endif
+            @endif
 
         </div>
     </main>
     <!-- End main-content -->
 
 
-    @if(!$product->addableToCart())
+    @if (!$product->addableToCart())
         <!-- Start Modal stocknotify -->
-        <div class="modal fade" id="modal-stock-notify" role="dialog"
-            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-md send-info modal-dialog-centered"
-                role="document">
+        <div class="modal fade" id="modal-stock-notify" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-md send-info modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalCenterTitle">
                             <i class="now-ui-icons location_pin"></i>
                             اطلاع از موجودی
                         </h5>
-                        <button type="button" class="close" data-dismiss="modal"
-                            aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -273,11 +272,8 @@
                                                     </h4>
                                                 </div>
                                                 <div class="form-row">
-                                                    <input class="input-ui pr-2 text-right"
-                                                        type="text"
-                                                        name="name"
-                                                        id="stock-name"
-                                                        placeholder="نام خود را وارد نمایید" required>
+                                                    <input class="input-ui pr-2 text-right" type="text" name="name"
+                                                        id="stock-name" placeholder="نام خود را وارد نمایید" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-12 mb-2">
@@ -287,17 +283,16 @@
                                                     </h4>
                                                 </div>
                                                 <div class="form-row">
-                                                    <input
-                                                        class="input-ui pl-2 dir-ltr text-left"
-                                                        type="text"
-                                                        name="mobile"
-                                                        id="stock-mobile"
-                                                        placeholder="09xxxxxxxxx" required>
+                                                    <input class="input-ui pl-2 dir-ltr text-left" type="text"
+                                                        name="mobile" id="stock-mobile" placeholder="09xxxxxxxxx"
+                                                        required>
                                                 </div>
                                             </div>
 
                                             <div class="col-12 pr-4 pl-4 text-center">
-                                                <button id="sendStockNotifyBtn" type="button" class="btn btn-md btn-primary btn-submit-form" data-dismiss="modal">به من اطلاع بده</button>
+                                                <button id="sendStockNotifyBtn" type="button"
+                                                    class="btn btn-md btn-primary btn-submit-form" data-dismiss="modal">به
+                                                    من اطلاع بده</button>
 
                                             </div>
                                         </div>
@@ -315,7 +310,8 @@
 
     @if ($show_prices_chart)
         <!-- Modal -->
-        <div class="modal fade" id="price-changes-modal" tabindex="-1" aria-labelledby="price-changes-modal-label" aria-hidden="true">
+        <div class="modal fade" id="price-changes-modal" tabindex="-1" aria-labelledby="price-changes-modal-label"
+            aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header pb-0">
@@ -336,7 +332,10 @@
                         <ul class="chart-prices-label">
                             @foreach ($product->prices()->orderBy('stock', 'desc')->get() as $chart_price)
                                 <li>
-                                    <label data-action="{{ route('front.products.priceChart', ['price' => $chart_price]) }}" data-title="{{ $chart_price->getAttributesName() }}" title="{{ $chart_price->getAttributesName() }}">
+                                    <label
+                                        data-action="{{ route('front.products.priceChart', ['price' => $chart_price]) }}"
+                                        data-title="{{ $chart_price->getAttributesName() }}"
+                                        title="{{ $chart_price->getAttributesName() }}">
                                         <span>{{ $chart_price->getAttributesName() }}</span>
                                     </label>
                                 </li>
@@ -361,71 +360,71 @@
     <script src="{{ theme_asset('js/plugins/apexcharts/apexcharts.js') }}"></script>
     <script src="{{ theme_asset('js/pages/products/show.js') }}?v=9"></script>
     <script src="{{ theme_asset('js/pages/comments.js') }}"></script>
-	<script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
-    const stars = document.querySelectorAll('.star');
-    const isAuthenticated = document.getElementById('stars').getAttribute('data-auth') === 'true';
-    const productId = {{ $product->id }};
-    const averageRatingElement = document.getElementById('average-rating');
+            const stars = document.querySelectorAll('.star');
+            const isAuthenticated = document.getElementById('stars').getAttribute('data-auth') === 'true';
+            const productId = {{ $product->id }};
+            const averageRatingElement = document.getElementById('average-rating');
 
-    if (isAuthenticated) {
-        stars.forEach(star => {
-            star.addEventListener('click', function() {
-                const rating = this.getAttribute('data-value');
-                highlightStars(rating);
-                submitRating(rating);
-            });
-        });
-    } else {
-        stars.forEach(star => {
-            star.style.cursor = 'default';
-        });
-    }
-
-    function highlightStars(value) {
-        stars.forEach(star => {
-            const starValue = parseInt(star.getAttribute('data-value'));
-            if (starValue <= value) {
-                star.style.color = 'gold';
+            if (isAuthenticated) {
+                stars.forEach(star => {
+                    star.addEventListener('click', function() {
+                        const rating = this.getAttribute('data-value');
+                        highlightStars(rating);
+                        submitRating(rating);
+                    });
+                });
             } else {
-                star.style.color = 'gray';
+                stars.forEach(star => {
+                    star.style.cursor = 'default';
+                });
+            }
+
+            function highlightStars(value) {
+                stars.forEach(star => {
+                    const starValue = parseInt(star.getAttribute('data-value'));
+                    if (starValue <= value) {
+                        star.style.color = 'gold';
+                    } else {
+                        star.style.color = 'gray';
+                    }
+                });
+            }
+
+            function submitRating(rating) {
+                fetch('/products/ratings', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        body: JSON.stringify({
+                            product_id: productId,
+                            rating: rating
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        Swal.fire({
+                            type: 'success',
+                            title: 'امتیاز شما با موفقیت ثبت شد',
+                            confirmButtonText: 'باشه',
+                        });
+                        // به‌روزرسانی میانگین امتیاز
+                        if (data.averageRating) {
+                            averageRatingElement.textContent = data.averageRating.toFixed(
+                                1); // نمایش یک رقم اعشار
+                        }
+                    })
+                    .catch(error => {
+                        Swal.fire({
+                            type: 'error',
+                            title: 'خطا در ثبت امتیاز',
+                            confirmButtonText: 'باشه',
+                        });
+                    });
             }
         });
-    }
-
-    function submitRating(rating) {
-        fetch('/products/ratings', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            },
-            body: JSON.stringify({
-                product_id: productId,
-                rating: rating
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            Swal.fire({
-                type: 'success',
-                title: 'امتیاز شما با موفقیت ثبت شد',
-                confirmButtonText: 'باشه',
-            });
-            // به‌روزرسانی میانگین امتیاز
-            if (data.averageRating) {
-                averageRatingElement.textContent = data.averageRating.toFixed(1); // نمایش یک رقم اعشار
-            }
-        })
-        .catch(error => {
-            Swal.fire({
-                type: 'error',
-                title: 'خطا در ثبت امتیاز',
-                confirmButtonText: 'باشه',
-            });
-        });
-    }
-});
-
     </script>
 @endpush

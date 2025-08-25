@@ -150,6 +150,9 @@ class ProductController extends Controller
 					'weight' => $request->weight,
 					'price_type' => "multiple-price",
 					'type' => $request->type,
+                    'car_model' =>$request->car_model,
+                    'mileage' =>$request->mileage,
+                    'carage'=> $request ->carage,
 					'description' => $request->description,
 					'short_description' => $request->short_description,
 					'special' => $request->special ? true : false,
@@ -165,7 +168,9 @@ class ProductController extends Controller
 					'discount_per_purchase' => $request->discount_per_purchase,
                     'publish_in_index'  => $request->publish_in_index,
                     'user_creator'  => auth()->user()->id
+
 				];
+                // dd($request);
 				if($request->filled('unit')){
 					$data['unit']=$request->unit;
 				}
@@ -239,6 +244,7 @@ class ProductController extends Controller
 
     public function update(UpdateProductRequest $request, Product $product)
     {
+        // dd($request);
         try {
             return DB::transaction(function ()use ($product,$request){
                 $product->update([
@@ -250,6 +256,8 @@ class ProductController extends Controller
                     'unit' => $request->unit,
                     'price_type' => "multiple-price",
                     'type' => $request->type,
+                    'car_model' =>$request->car_model,
+                    'mileage' =>$request->mileage,
                     'description' => $request->description,
                     'short_description' => $request->short_description,
                     'special' => $request->special ? true : false,
